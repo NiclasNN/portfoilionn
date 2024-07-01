@@ -7,7 +7,7 @@ const Comet = () => {
       const comet = document.createElement('div');
       comet.className = 'comet';
       comet.style.top = `${Math.random() * 100}vh`;
-      comet.style.left = `${Math.random() * 100}vw`;
+      comet.style.left = `-${Math.random() * 20 + 10}vw`; // Startar utanför skärmen
       comet.style.animationDuration = `${Math.random() * 2 + 3}s`;
 
       document.querySelector('.comet-container').appendChild(comet);
