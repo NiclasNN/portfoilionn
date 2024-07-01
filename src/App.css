@@ -1,0 +1,22 @@
+.App {
+  /* Globala stilar för hela applikationen */
+  font-family: Arial, sans-serif;
+  /* Andra globala stilar kan läggas till här */
+}
+
+.Container {
+  /* Stilar för din huvudcontainer som innehåller allt */
+  padding: 2rem;
+  
+
+  border-radius: 8px;
+   /* Anpassa detta beroende på navbarns höjd */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding:0;
+  margin: 0px;
+  height: 400px;/* Centrera innehållet vertikalt */
+}
+
+

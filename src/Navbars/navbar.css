@@ -1,0 +1,67 @@
+.navbar-container {
+  display: flex;
+  justify-content: center; /* Centrera navbaren horisontellt */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10; /* Se till att navbaren ligger över annat innehåll */
+ /* Transparent blå färg */
+  padding: 1rem 0; /* Lägg till lite padding för att ge utrymme ovanför navbar */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(77, 128, 228, 0.8); /* Transparent blå färg */
+  color: #fff;
+
+  max-width: 1200px; /* Maximal bredd för att begränsa bredden när fönstret är större */
+  margin: 0 auto; /* Centrera horisontellt */
+  border-radius: 50px;
+}
+
+.navbar-brand a {
+  color: #d3d3d3; /* Ljusgrå färg */
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 3rem; /* Avstånd mellan länkar, justerat för att vara mindre vid zoom */
+  margin-left: 58px;/* Flytta länkarna till högerkant */
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background: rgba(9, 232, 68, 0.2);
+  transform: scale(1.05); /* Lite mindre skala än tidigare för att vara mindre märkbar */
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: whitesmoke; /* Färg vid hover */
+}
+
+.navbar-links img {
+  width: 32px; /* Justera storlek på flaggan */
+  height: 32px;
+  margin-left: 1rem;
+}
