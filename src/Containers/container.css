@@ -1,7 +1,34 @@
 .container {
-  position: relative;
+  position: flex;
   z-index: 1; /* Se till att containern ligger över kometerna */
   min-height: 100vh; /* Gör att containern täcker hela höjden av skärmen */
   overflow: hidden; /* Döljer eventuella överflödiga delar av kometerna */
   background-color: rgba(255, 255, 255, 0.8); /* Lägg till en lätt bakgrund för att se innehållet bättre */
+}
+
+
+.my-image{
+
+position: fixed;
+border-radius: 50%;
+height: 200px;
+width: auto;
+top: 200px;
+margin: auto;
+padding: 1px;
+left:200px;
+}
+
+
+
+#box{
+
+position: fixed;
+align-items: center;
+margin: 10px;
+background-color: blue;
+height: 100px;
+width:100px
+
+
 }
