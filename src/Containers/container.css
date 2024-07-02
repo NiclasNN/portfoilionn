@@ -1,34 +1,46 @@
 .container {
-  position: flex;
-  z-index: 1; /* Se till att containern ligger över kometerna */
-  min-height: 100vh; /* Gör att containern täcker hela höjden av skärmen */
-  overflow: hidden; /* Döljer eventuella överflödiga delar av kometerna */
-  background-color: rgba(255, 255, 255, 0.8); /* Lägg till en lätt bakgrund för att se innehållet bättre */
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  
 }
+
+
+
 
 
 .my-image{
 
-position: fixed;
-border-radius: 50%;
-height: 200px;
-width: auto;
-top: 200px;
-margin: auto;
-padding: 1px;
-left:200px;
+  position: fixed;
+  border-radius: 50%;
+  height: 200px;
+  width: auto;
+  top: 241px;
+  margin: auto;
+  padding: 1px;
 }
 
 
+#boxen{
+  
+    height: 500px;
+    width: 300px;
+    display: flex;
+   
+    justify-content: center; /* Centrerar innehållet i boxen */
+    background-color: rgba(240, 248, 255, 0.8); /* Gjort bakgrunden delvis transparent */
+    border-radius: 15px; /* Ger boxen rundade hörn */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    position: relative; /* Håller positionen relativ inom containern */
+    top: 100px;
+    margin-left: 400px;
+     /* Flyttar boxen något ner från toppen av containern */
+  }
 
-#box{
-
-position: fixed;
-align-items: center;
-margin: 10px;
-background-color: blue;
-height: 100px;
-width:100px
 
 
-}

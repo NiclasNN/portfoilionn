@@ -1,39 +1,25 @@
-.comet-container {
-  position: absolute;
-  width: 100%;
+body, html {
   height: 100%;
+  margin: 0;
   overflow: hidden;
-  z-index: -1; /* Lägger kometerna bakom innehållet */
-  pointer-events: none; /* Förhindra interaktioner */
+  background: linear-gradient(135deg, #1e5799 0%, #2989d8 50%, #207cca 75%);
 }
 
-.comet {
+.bubble {
   position: absolute;
-  width: 10px;
-  height: 12px;
-  background: linear-gradient(180deg, rgba(0, 0, 139, 1), rgba(0, 0, 139, 0.5));
+  bottom: -100px;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
-  transform: rotate(45deg);
-  animation: flyby linear infinite;
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: rise 20s infinite ease-in-out;
 }
 
-.comet::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 139, 0.5), rgba(5, 5, 241, 0));
-  border-radius: 50%;
-  transform: rotate(45deg) translateY(50%);
-}
-
-@keyframes flyby {
+@keyframes rise {
   0% {
-    transform: translateX(-100vw) translateY(100vh) rotate(45deg); /* Startar utanför vänstra och nedre kanten */
-    opacity: 1;
+    transform: translateY(0);
   }
   100% {
-    transform: translateX(100vw) translateY(-100vh) rotate(45deg); /* Flyger utanför högra och övre kanten */
-    opacity: 0;
+    transform: translateY(-100vh);
   }
 }
