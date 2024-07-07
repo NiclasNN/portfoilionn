@@ -6,7 +6,7 @@ function Navbar() {
         <div className="navbar-container">
             <nav className="navbar">
                 <div className="navbar-brand">
-                    <a href="#home">My Portfolio</a>
+                    <a href="#home">Niclas Norman</a>
                 </div>
                 <div className="navbar-links">
                     <a href="#home">Home</a>

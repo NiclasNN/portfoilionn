@@ -14,9 +14,10 @@
   display: flex;
   flex-direction: column;
   align-items: center; 
+  justify-content: center;
   padding:0;
   margin: 0px;
-  height: 400px;/* Centrera innehållet vertikalt */
+  height: 800px;/* Centrera innehållet vertikalt */
 }
 
 
