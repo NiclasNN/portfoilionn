@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center; /* Centrera navbaren horisontellt */
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   z-index: 10; /* Se till att navbaren ligger över annat innehåll */
  /* Transparent blå färg */

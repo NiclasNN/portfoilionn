@@ -3,7 +3,7 @@ import React from 'react';
 import Navbar from './Navbars/navbar';
 import Container from './Containers/Container';
 import './App.css';
-import About from './aboutme/About';
+
 
 
 function App() {

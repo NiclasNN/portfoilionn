@@ -1,20 +1,17 @@
-/* About component styling */
+/* För about-container */
 .about-container {
-  background: hidden;
+  background-color: #f9f9f9;
   border-radius: 15px;
-margin-top: 800px;
   padding: 30px;
   width: 80%;
   max-width: 600px;
- justify-content: center;
-  display:block;
   font-family: 'Roboto', sans-serif;
   color: #1a1a1a;
-position: absolute;}
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 300px; /* Justera detta värde efter behov för att öka avståndet till sektionen */
+  min-height: 600px; /* Justera höjden efter behov */
+  overflow-y: auto; /* Använd 'auto' för att visa skrollning om innehållet är längre än min-height */
+}
 
-   
+  /* Ange en fast höjd och overflow inställd på auto för att möjliggöra skrollning */
   
-  
- 
-  
- 
