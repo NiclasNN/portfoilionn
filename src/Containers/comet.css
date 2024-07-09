@@ -1,26 +1,19 @@
-body, html {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  background: linear-gradient(135deg, #dae3ed 0%, #79b8ea 50%, #9bc5ea 75%);
-}
-
-.bubble {
+.particle {
   position: absolute;
-  bottom: -100px;
-  background: rgba(1, 22, 80, 0.15);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   pointer-events: none;
-  box-shadow: 0 0 20px rgba(1, 13, 190, 0.2);
-  animation: rise 20s infinite ease-in-out;
+  animation: floatParticles 10s infinite ease-in-out;
 }
 
-@keyframes rise {
+@keyframes floatParticles {
   0% {
-    transform: translateY(0);
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px);
   }
   100% {
-    transform: translateY(-100vh);
+    transform: translateY(0) translateX(0);
   }
 }
-

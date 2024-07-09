@@ -3,30 +3,27 @@ import './comet.css';
 
 const Comet = () => {
   useEffect(() => {
-    const createBubble = () => {
-      const bubble = document.createElement('div');
-      bubble.className = 'bubble';
-      bubble.style.left = `${Math.random() * 100}vw`;
-      bubble.style.width = `${Math.random() * 50 + 50}px`;
-      bubble.style.height = bubble.style.width;
+    const createParticle = () => {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.width = `${Math.random() * 10 + 5}px`;
+      particle.style.height = particle.style.width;
+      particle.style.top = `${Math.random() * 100}vh`;
+      particle.style.left = `${Math.random() * 100}vw`;
 
-      document.body.appendChild(bubble);
+      document.body.appendChild(particle);
 
       setTimeout(() => {
-        bubble.remove();
-      }, 20000); // Bubblan försvinner efter 20 sekunder
+        particle.remove();
+      }, 10000);
     };
 
-    for (let i = 0; i < 20; i++) {
-      createBubble();
-    }
-
-    const interval = setInterval(createBubble, 4000); // Skapa en ny bubbla var 4:e sekund
+    const interval = setInterval(createParticle, 500);
 
     return () => clearInterval(interval);
   }, []);
 
-  return null; // Komponent returnerar ingenting, eftersom bubblorna läggs till direkt i DOM:en
+  return null;
 };
 
 export default Comet;
