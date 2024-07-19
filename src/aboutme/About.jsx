@@ -4,19 +4,13 @@ import './About.css';
 const About = () => {
   return (
     <div className="about-container">
-      <p>
-Låt mig introducera mig själv och det som driver mig! Jag är en lugn och nyfiken person
-som älskar att lösa problem och analysera olika situationer. Min förmåga att vara tålmodig
-och se bortom det uppenbara hjälper mig att hitta kreativa lösningar på olika utmaningar.
-Jag trivs i harmoniska miljöer och strävar alltid efter att skapa samarbete utan friktion.
-Genom min analytiska natur och min passion för problemlösning är jag redo att ta mig an nya
-projekt och utmaningar med öppet sinne och beslutsamhet. Jag ser fram emot att utforska
-möjligheterna tillsammans!
+      <p>Hej, jag heter Niclas Norman. Jag är en lugn och analytisk person som gillar att lösa problem och analysera olika situationer. Med min tålmodighet och förmåga att se förbi det uppenbara, hittar jag ofta effektiva lösningar på utmaningar. Jag trivs i harmoniska arbetsmiljöer och arbetar för att skapa ett gott samarbete. Jag ser fram emot att ta mig an nya utmaningar och projekt.
 </p>
+
+
     </div>
   );
 }
 
 export default About;
-
 

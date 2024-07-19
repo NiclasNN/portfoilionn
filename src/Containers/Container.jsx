@@ -2,6 +2,8 @@ import React from 'react';
 import './container.css';
 import Comet from './comet';
 import About from '../aboutme/About';
+import Projects from '../myprojects/Projects';
+import Codelanguage from '../codelanguages/Codelanguage'; 
 
 const Container = ({ children }) => {
   return (
@@ -15,10 +17,13 @@ const Container = ({ children }) => {
         <div id="boxen">
           <img src="/jag.png" alt="Bild på mig" className="my-image" />
           {children}
+          
         </div>
+        
       </div>
       <About />
-       {/* Placera About-komponenten här */}
+      <Codelanguage /> 
+      <Projects/>
     </div>
   );
 };
