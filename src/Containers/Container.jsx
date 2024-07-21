@@ -4,9 +4,12 @@ import Comet from './comet';
 import About from '../aboutme/About';
 import Projects from '../myprojects/Projects';
 import Codelanguage from '../codelanguages/Codelanguage'; 
-
+<title>Niclas Norman portfolio
+  
+</title>
 const Container = ({ children }) => {
   return (
+    
     <div className="container">
       <Comet />
       <div className="boxes">
@@ -24,7 +27,9 @@ const Container = ({ children }) => {
       <About />
       <Codelanguage /> 
       <Projects/>
+      <div id ="contactme"><h2>kontakta mig</h2></div>
     </div>
+    
   );
 };
 

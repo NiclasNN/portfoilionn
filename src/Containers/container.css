@@ -2,7 +2,6 @@
   position: relative;
   z-index: 1;
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,4 +99,24 @@ h2 {
 
 
 
+#contactme{
+  color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    background: rgba(6, 1, 1, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+   margin-bottom: 188px;
+   
 
+    
+}
+#contactme :hover{
+
+  box-shadow: inset 100px 0 0 0 #54b3d6;
+  color: white;
+  cursor: pointer;
+
+
+}
