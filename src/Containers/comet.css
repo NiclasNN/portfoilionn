@@ -1,28 +1,28 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
 .comet-container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.cube {
+  position: absolute;
+  background-color: rgba(0, 0, 255, 0.5);
+  animation: rotateCube linear infinite;
+}
+
+@keyframes rotateCube {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .bubble {
-    position: absolute;
-    bottom: -100px;
-    background: rgba(0, 0, 255, 0.15); /* Dark blue color */
-    border-radius: 50%;
-    pointer-events: none;
-    box-shadow: 0 0 20px rgba(0, 0, 255, 0.2); /* Dark blue shadow */
-    animation: rise 30s infinite ease-in-out; /* Slower animation */
+  to {
+    transform: rotate(360deg);
   }
-  
-  @keyframes rise {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-100vh);
-    }
-  }
-  
+}

@@ -3,30 +3,33 @@ import './comet.css';
 
 const Comet = () => {
   useEffect(() => {
-    const createBubble = () => {
-      const bubble = document.createElement('div');
-      bubble.className = 'bubble';
-      bubble.style.left = `${Math.random() * 100}vw`;
-      bubble.style.width = `${Math.random() * 50 + 50}px`;
-      bubble.style.height = bubble.style.width;
+    const cubes = document.querySelectorAll('.cube');
+    cubes.forEach(cube => {
+      const size = Math.random() * 60 + 20; // Justera storleken på kuberna
+      const left = Math.random() * 100;
+      const top = Math.random() * 100;
+      const duration = Math.random() * 20 + 10; // Justera hastigheten
+      const delay = Math.random() * 10;
+      const rotate = Math.random() * 360;
 
-      document.querySelector('.comet-container').appendChild(bubble);
-
-      setTimeout(() => {
-        bubble.remove();
-      }, 30000); // Bubblan försvinner efter 30 sekunder
-    };
-
-    for (let i = 0; i < 10; i++) { // Fewer bubbles
-      createBubble();
-    }
-
-    const interval = setInterval(createBubble, 5000); // Create a new bubble every 5 seconds
-
-    return () => clearInterval(interval);
+      cube.style.width = `${size}px`;
+      cube.style.height = `${size}px`;
+      cube.style.left = `${left}%`;
+      cube.style.top = `${top}%`;
+      cube.style.animationDuration = `${duration}s`;
+      cube.style.animationDelay = `${delay}s`;
+      cube.style.transform = `rotate(${rotate}deg)`;
+      cube.style.backgroundColor = `rgba(0, 0, 255, ${Math.random() * 0.5 + 0.3})`; // Justera färgintensiteten
+    });
   }, []);
 
-  return <div className="comet-container"></div>;
+  return (
+    <div className="comet-container">
+      {[...Array(15)].map((_, i) => (
+        <div key={i} className="cube"></div>
+      ))}
+    </div>
+  );
 };
 
 export default Comet;
