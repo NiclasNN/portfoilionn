@@ -11,6 +11,8 @@ const Container = ({ children }) => {
         <div id="boxen2">
           <h2>Niclas Norman</h2>
           <h1>Frontend developer</h1>
+
+         
         </div>
         <div id="boxen">
           <img src="/jag.png" alt="Bild på mig" className="my-image" />
