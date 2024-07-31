@@ -1,8 +1,40 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './codelanguage.css';
+
 function Codelanguage() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    // Callback-funktion som körs när elementets synlighet förändras
+    const callback = (entries) => {
+      const [entry] = entries;
+      if (entry.isIntersecting) {
+        sectionRef.current.classList.add('visible');
+        console.log('Element is visible'); // Debug: elementet är synligt
+      } else {
+        sectionRef.current.classList.remove('visible');
+        console.log('Element is not visible'); // Debug: elementet är inte synligt
+      }
+    };
+
+    // Skapa en observer som anropar callback när elementets synlighet förändras
+    const observer = new IntersectionObserver(callback, { threshold: 0.1 });
+
+    // Observera det refererade elementet
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    // Städa upp och sluta observera när komponenten unmountas
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className='frontendandbackend'>
+    <div className='frontendandbackend' ref={sectionRef}>
       <h2>Teknologier och ramverk jag använder</h2>
       <div className='icon-container'>
         {[

@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Projects.css';
 
 function Projects() {
+  const [flipped, setFlipped] = useState(Array(4).fill(false)); // Assuming 4 projects
+
+  const handleFlip = (index) => {
+    setFlipped((prevState) =>
+      prevState.map((state, i) => (i === index ? !state : state))
+    );
+  };
+
   const projects = [
     {
       title: "Spotify-klon",
@@ -41,15 +49,27 @@ function Projects() {
     <div className="projects">
       <h2>Projekt</h2>
       {projects.map((project, index) => (
-        <div className="project-box" key={index}>
-          <img src={project.image} alt={project.title} />
-          <div className="project-content">
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <p className="tech-stack">{project.tech}</p>
-            <div className="buttons">
-              <a href={project.github} className="button">Github</a>
-              <a href={project.demo} className="button">Demo</a>
+        <div
+          className={`project-box ${flipped[index] ? 'flipped' : ''}`}
+          key={index}
+          onClick={() => handleFlip(index)}
+        >
+          <div className="project-box-inner">
+            <div className="project-box-front">
+              <div className="project-image">
+                <img src={project.image} alt={project.title} />
+              </div>
+            </div>
+            <div className="project-box-back">
+              <div className="project-content">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <p className="tech-stack">{project.tech}</p>
+                <div className="buttons">
+                  <a href={project.github} className="button">Github</a>
+                  <a href={project.demo} className="button">Demo</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

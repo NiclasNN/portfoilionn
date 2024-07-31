@@ -1,72 +1,129 @@
+/* Container för projekt med centrering och mellanrum mellan rader */
 .projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    gap: 20px;
-  }
-  
-  .projects h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .project-box {
-    display: flex;
-    flex-direction: row;
-    background-color: #e3f2fd;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .project-box img {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    margin-right: 20px;
-  }
-  
-  .project-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .project-content h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.5em;
-  }
-  
-  .project-content p {
-    margin: 0;
-    margin-bottom: 10px;
-  }
-  
-  .tech-stack {
-    font-style: italic;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .buttons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+    flex-wrap: wrap; /* Tillåter element att bryta till nästa rad */
+    gap: 20px; /* Avstånd mellan boxarna */
+    justify-content: space-around; /* Fördelar utrymme jämnt mellan boxarna */
+    align-items: stretch; /* Sträcker boxarna så att de är lika höga */
+    max-width: 800px; /* Maximal bredd på containern för centrering */
+    margin: 0 auto;
+}
+
+.projects h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Container för projektboxar i en 2x2-rad */
+.project-container {
+  display: flex;
+  /* Gör att boxarna kan bryta till en ny rad */
+  gap: 20px; /* Avstånd mellan boxar */
+  justify-content: center;
+  max-width: 800px; /* Maximal bredd för att centrera och begränsa bredden på container */
+}
+
+/* Bas-styling för varje projektbox med 3D-effekt */
+.project-box {
+  perspective: 1000px;
+  width: 300px; /* Bredd för varje box */
+  height: 300px; /* Höjd för varje box */
+  box-sizing: border-box;
+}
+
+/* Inre element för flip-effekt */
+.project-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+/* Flip-effekt vid klick */
+.project-box.flipped .project-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Fram- och baksidan av boxen */
+.project-box-front,
+.project-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fram-sidan av boxen */
+.project-box-front {
+  background-color: transparent;
+}
+
+/* Baksidan av boxen */
+.project-box-back {
+  background-color: #f8f9fa;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Bild i boxens framsida */
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Innehåll i baksidan av boxen */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
+/* Rubrik och text i baksidan */
+.project-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.project-content p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.tech-stack {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Knapparna i baksidan */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}

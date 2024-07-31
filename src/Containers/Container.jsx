@@ -23,7 +23,7 @@ const Container = ({ children }) => {
       <Codelanguage />
       <Projects />
       <div id="contactme">
-        <h2>kontakta mig</h2>
+        <h3>kontakta mig</h3>
       </div>
     </div>
   );

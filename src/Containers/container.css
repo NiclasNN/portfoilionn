@@ -86,7 +86,7 @@ h1 {
   
 }
 
-h2 {
+h3 {
   font-size: 2.5rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -99,24 +99,52 @@ h2 {
 
 
 
-#contactme{
-  color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-    background: rgba(6, 1, 1, 0.1);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-   margin-bottom: 188px;
-   
-
-    
+#contactme {
+  text-decoration: none;
+  padding: 10.56px 10.12px; /* 12px * 0.88 ≈ 10.56px och 24px * 0.88 ≈ 21.12px */
+  background: #4a90e2; /* En elegant blå färg */
+  border-radius: 30px; /* 20px * 0.88 ≈ 17.6px */
+  font-size: 14.08px; /* 16px * 0.88 ≈ 14.08px */
+  margin-bottom: 88px; /* 100px * 0.88 ≈ 88px */
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 3.52px 7.04px rgba(0, 0, 0, 0.2); /* 0 4px 8px * 0.88 */
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* Ser till att effekten stannar inom knappen */
+  color: #ffffff; /* Vit textfärg för bättre kontrast */
 }
-#contactme :hover{
 
-  box-shadow: inset 100px 0 0 0 #54b3d6;
-  color: white;
+#contactme::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px; /* Samma radie som knappen */
+  border: 4px solid transparent;
+  background: linear-gradient(45deg, #187366, #1addb9, #50e3c2);
+  background-size: 200% 200%;
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: -1;
+}
+
+#contactme:hover::before {
+  opacity: 1;
+  animation: gradientMove 4s linear infinite;
+}
+
+#contactme:hover {
+  background: #274b78; /* Mörkare blå nyans */
+  box-shadow: linear-gradient(45deg, #187366, #1addb9, #50e3c2); /* 0 6px 12px * 0.88 */
+  transform: scale(1.05);
   cursor: pointer;
+}
 
-
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
