@@ -1,33 +1,39 @@
 /* Container för projekt med centrering och mellanrum mellan rader */
 .projects {
-  display: flex;
-    flex-wrap: wrap; /* Tillåter element att bryta till nästa rad */
-    gap: 20px; /* Avstånd mellan boxarna */
-    justify-content: space-around; /* Fördelar utrymme jämnt mellan boxarna */
-    align-items: stretch; /* Sträcker boxarna så att de är lika höga */
-    max-width: 800px; /* Maximal bredd på containern för centrering */
-    margin: 0 auto;
+  text-align: center;
+  padding: 36px;
+  margin-top: 156px;
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 1s ease-in, transform 1s ease-in;
+}
+
+.projects.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projects h2 {
   font-size: 2em;
   margin-bottom: 20px;
+  position: relative; /* Ändra till relative för att undvika överlappning */
 }
 
-/* Container för projektboxar i en 2x2-rad */
+/* Container för projektboxar med centrering och flex-wrap */
 .project-container {
   display: flex;
-  /* Gör att boxarna kan bryta till en ny rad */
-  gap: 20px; /* Avstånd mellan boxar */
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  max-width: 800px; /* Maximal bredd för att centrera och begränsa bredden på container */
+  max-width: 1200px; /* Justera vid behov */
+  margin: 0 auto;
 }
 
 /* Bas-styling för varje projektbox med 3D-effekt */
 .project-box {
   perspective: 1000px;
-  width: 300px; /* Bredd för varje box */
-  height: 300px; /* Höjd för varje box */
+  width: 300px;
+  height: 300px;
   box-sizing: border-box;
 }
 

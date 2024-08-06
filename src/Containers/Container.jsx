@@ -23,7 +23,7 @@ const Container = ({ children }) => {
       <Codelanguage />
       <Projects />
       <div id="contactme">
-        <h3>kontakta mig</h3>
+      <a href="mailto:niclasnorman1@hotmail.se"> <h3>kontakta mig</h3></a>
       </div>
     </div>
   );

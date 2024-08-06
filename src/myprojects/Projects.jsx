@@ -1,8 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Projects.css';
 
 function Projects() {
   const [flipped, setFlipped] = useState(Array(4).fill(false)); // Assuming 4 projects
+  const projectRef = useRef(null);
+
+  useEffect(() => {
+    const callback = (entries) => {
+      const [entry] = entries;
+      if (entry.isIntersecting) {
+        projectRef.current.classList.add('visible');
+      } else {
+        projectRef.current.classList.remove('visible');
+      }
+    };
+
+    const observer = new IntersectionObserver(callback, { threshold: 0.1 });
+
+    if (projectRef.current) {
+      observer.observe(projectRef.current);
+    }
+
+    return () => {
+      if (projectRef.current) {
+        observer.unobserve(projectRef.current);
+      }
+    };
+  }, []);
 
   const handleFlip = (index) => {
     setFlipped((prevState) =>
@@ -46,34 +70,36 @@ function Projects() {
   ];
 
   return (
-    <div className="projects">
+    <div id="projects" className="projects" ref={projectRef}>
       <h2>Projekt</h2>
-      {projects.map((project, index) => (
-        <div
-          className={`project-box ${flipped[index] ? 'flipped' : ''}`}
-          key={index}
-          onClick={() => handleFlip(index)}
-        >
-          <div className="project-box-inner">
-            <div className="project-box-front">
-              <div className="project-image">
-                <img src={project.image} alt={project.title} />
+      <div className="project-container">
+        {projects.map((project, index) => (
+          <div
+            className={`project-box ${flipped[index] ? 'flipped' : ''}`}
+            key={index}
+            onClick={() => handleFlip(index)}
+          >
+            <div className="project-box-inner">
+              <div className="project-box-front">
+                <div className="project-image">
+                  <img src={project.image} alt={project.title} />
+                </div>
               </div>
-            </div>
-            <div className="project-box-back">
-              <div className="project-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <p className="tech-stack">{project.tech}</p>
-                <div className="buttons">
-                  <a href={project.github} className="button">Github</a>
-                  <a href={project.demo} className="button">Demo</a>
+              <div className="project-box-back">
+                <div className="project-content">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <p className="tech-stack">{project.tech}</p>
+                  <div className="buttons">
+                    <a href={project.github} className="button">Github</a>
+                    <a href={project.demo} className="button">Demo</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
