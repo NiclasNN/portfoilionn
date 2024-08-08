@@ -52,6 +52,7 @@ function Navbar() {
                     <a href="#about">Me</a>
                     <a href="#projects">Projects</a>
                     <a href="mailto:niclasnorman1@hotmail.se">Contact</a>
+                    <a href={`/CV.pdf`} download>CV</a>
                     
                 </div>
             </nav>

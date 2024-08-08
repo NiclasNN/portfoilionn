@@ -25,7 +25,7 @@ body, html {
 
 /* Animerad bakgrund */
 .area {
-  background: #4e54c8;
+  background: #30303a;
   background-image: url('/background.jpg');
   background-size: cover; /* Täcker hela ytan */
   background-position: center center;
@@ -50,7 +50,7 @@ body, html {
   list-style: none;
   width: 20px;
   height: 20px;
-  background: darkblue;
+  background: lightgrey;
   animation: animate 25s linear infinite;
   bottom: -150px;
 }

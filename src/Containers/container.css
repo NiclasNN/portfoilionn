@@ -84,6 +84,12 @@ h1 {
   
 }
 
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 h3 {
   font-size: 2.5rem;
   font-family: 'Roboto', sans-serif;
@@ -91,14 +97,12 @@ h3 {
   color: #1a1a1a;
   text-transform: none;
   letter-spacing: 0.5px;
-  margin:5px;
+  margin: 5px;
+  text-decoration: none;
 }
 
-
-
-
 #contactme {
-  text-decoration: none;
+  text-decoration: none; /* Tar bort understrykning */
   padding: 10.56px 10.12px; /* 12px * 0.88 ≈ 10.56px och 24px * 0.88 ≈ 21.12px */
   background: #4a90e2; /* En elegant blå färg */
   border-radius: 30px; /* 20px * 0.88 ≈ 17.6px */
@@ -136,10 +140,12 @@ h3 {
 
 #contactme:hover {
   background: #274b78; /* Mörkare blå nyans */
-  box-shadow: linear-gradient(45deg, #187366, #1addb9, #50e3c2); /* 0 6px 12px * 0.88 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Rättad rad för box-shadow */
   transform: scale(1.05);
   cursor: pointer;
+  text-decoration: none; /* Säkerställ att understrykning inte visas vid hover */
 }
+
 
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
