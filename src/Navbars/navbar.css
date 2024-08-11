@@ -1,28 +1,26 @@
 .navbar-container {
   display: flex;
-  justify-content: center; /* Centrera navbaren horisontellt */
+  justify-content: center;
   width: 100%;
   position: absolute;
   top: 0;
-  z-index: 10; /* Se till att navbaren ligger över annat innehåll */
- /* Transparent blå färg */
-  padding: 1rem 0; /* Lägg till lite padding för att ge utrymme ovanför navbar */
+  z-index: 10;
+  padding: 1rem 0;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(77, 128, 228, 0.8); /* Transparent blå färg */
+  background-color: rgba(77, 128, 228, 0.8);
   color: #fff;
-
-  max-width: 1200px; /* Maximal bredd för att begränsa bredden när fönstret är större */
-  margin: 0 auto; /* Centrera horisontellt */
-  border-radius: 50px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
 }
 
 .navbar-brand a {
-  color: #d3d3d3; /* Ljusgrå färg */
+  color: #d3d3d3;
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
@@ -30,8 +28,9 @@
 
 .navbar-links {
   display: flex;
-  gap: 3rem; /* Avstånd mellan länkar, justerat för att vara mindre vid zoom */
-  margin-left: 58px;/* Flytta länkarna till högerkant */
+  align-items: center;
+  gap: 4rem;
+  margin-left: auto;
 }
 
 .navbar-links a {
@@ -47,21 +46,45 @@
 
 .navbar-links a:hover {
   background: rgba(9, 232, 68, 0.2);
-  transform: scale(1.05); /* Lite mindre skala än tidigare för att vara mindre märkbar */
+  transform: scale(1.05);
 }
 
-.navbar-links a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.navbar-links a:hover {
-  color: whitesmoke; /* Färg vid hover */
-}
-
-.navbar-links img {
+.navbar-flag {
   width: 32px; /* Justera storlek på flaggan */
   height: 32px;
   margin-left: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar-flag:hover {
+  transform: scale(1.1); /* Liten förstoring vid hover */
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navbar-toggle div {
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px;
+  }
 }
