@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 50vh;
   padding: 2rem;
   margin-top: 50px;
   background: rgba(255, 255, 255, 0.3);
@@ -34,4 +33,13 @@
   width: 300px; /* Justera bredden efter behov */
   height: auto; /* Behåller bildens aspektförhållande */
   border-radius: 10px;
+  transition: transform 1s ease, opacity 1s ease;
+  opacity: 0;
+  transform: scale(0.8); /* Starta med mindre storlek */
+}
+
+/* När sektionen är synlig */
+.about-container.visible .about-image {
+  opacity: 1;
+  transform: scale(1); /* Zooma in till normal storlek */
 }

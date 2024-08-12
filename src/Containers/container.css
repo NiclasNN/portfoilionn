@@ -9,6 +9,7 @@
 
 }
 
+
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -21,6 +22,8 @@
   }
 }
 
+
+
 .my-image {
   border-radius: 50%;
   height: 300px;
@@ -31,6 +34,8 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   position: relative;
   right:430px;
+  top: 107px;
+
   
 }
 
@@ -73,17 +78,27 @@
 
 }
 
-h1 {
+#boxen2 h1 {
   font-size: 4.5rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #082d59;
   text-transform: none;
   letter-spacing: 0.5px;
   margin:20px;
   
 }
 
+#boxen2 h2 {
+  font-size: 2.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #082d59;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  margin:1px;
+  
+}
 
 a {
   text-decoration: none;

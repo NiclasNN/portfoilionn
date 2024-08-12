@@ -41,7 +41,7 @@ function Navbar() {
                     <a href="#home">Niclas Norman</a>
                 </div>
                 <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-                    <a href="#homesiten">Home</a>
+                    <a href="#">Home</a>
                     <a href="#about">Me</a>
                     <a href="#projects">Projects</a>
                     <a href="mailto:niclasnorman1@hotmail.se">Contact</a>
