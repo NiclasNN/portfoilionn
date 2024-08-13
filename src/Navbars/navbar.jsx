@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './navbar.css';
 
-function Navbar() {
+function Navbar({ language, setLanguage }) {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [language, setLanguage] = useState('sv'); // 'sv' för svenska, 'en' för engelska
 
     useEffect(() => {
         const handleScroll = (event) => {
@@ -30,8 +29,19 @@ function Navbar() {
         return () => links.forEach(link => link.removeEventListener('click', handleScroll));
     }, []);
 
+    // Funktion för att byta språk
     const toggleLanguage = () => {
-        setLanguage(prevLang => prevLang === 'sv' ? 'en' : 'sv');
+        const newLanguage = language === 'sv' ? 'en' : 'sv';
+        setLanguage(newLanguage);
+    };
+
+    // Text baserad på det valda språket
+    const text = {
+        home: language === 'sv' ? 'Hem' : 'Home',
+        about: language === 'sv' ? 'Om mig' : 'About',
+        projects: language === 'sv' ? 'Projekt' : 'Projects',
+        contact: language === 'sv' ? 'Kontakt' : 'Contact',
+        downloadCv: language === 'sv' ? 'CV' : 'Resume',
     };
 
     return (
@@ -41,15 +51,15 @@ function Navbar() {
                     <a href="#home">Niclas Norman</a>
                 </div>
                 <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-                    <a href="#">Home</a>
-                    <a href="#about">Me</a>
-                    <a href="#projects">Projects</a>
-                    <a href="mailto:niclasnorman1@hotmail.se">Contact</a>
-                    <a href={`/CV.pdf`} download>CV</a>
+                    <a href="#home">{text.home}</a>
+                    <a href="#about">{text.about}</a>
+                    <a href="#projects">{text.projects}</a>
+                    <a href="mailto:niclasnorman1@hotmail.se">{text.contact}</a>
+                    <a href={`/CV.pdf`} download>{text.downloadCv}</a>
 
-                    {/* Flag for language toggle */}
+                    {/* Flagga för språkbyte */}
                     <img
-                        src={language === 'sv' ? 'english.svg' : 'swedish.svg'}
+                        src={language === 'sv' ? '/english.svg' : '/swedish.svg'}
                         alt={language === 'sv' ? 'Switch to English' : 'Byt till Svenska'}
                         className="navbar-flag"
                         onClick={toggleLanguage}

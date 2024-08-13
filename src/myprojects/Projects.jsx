@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Projects.css';
 
 function Projects() {
-  const [flipped, setFlipped] = useState(Array(4).fill(false)); // Assuming 4 projects
+  const [flipped, setFlipped] = useState(Array(4).fill(false));
+  const [selectedProject, setSelectedProject] = useState(null);
   const projectRef = useRef(null);
 
   useEffect(() => {
@@ -34,6 +35,14 @@ function Projects() {
     );
   };
 
+  const handleProjectClick = (index) => {
+    setSelectedProject(projects[index]);
+  };
+
+  const handleBackClick = () => {
+    setSelectedProject(null);
+  };
+
   const projects = [
     {
       title: "Spotify-klon",
@@ -41,7 +50,8 @@ function Projects() {
       tech: "Html | React | CSS | Material UI | Spotify API | Spotify Playback SDK",
       image: "/spotify-preveiw.png",
       github: "#",
-      demo: "#"
+      demo: "#",
+      download: "#"
     },
     {
       title: "Flaggapp",
@@ -49,7 +59,8 @@ function Projects() {
       tech: "Html | React | CSS | Material UI | Rest countries API",
       image: "/flaggapp-preveiw.png",
       github: "#",
-      demo: "#"
+      demo: "#",
+      download: "#"
     },
     {
       title: "Klarna checkout",
@@ -57,7 +68,8 @@ function Projects() {
       tech: "Node.js | Express | Klarna API | Fake Store API",
       image: "/klarna-checkout-preveiw.png",
       github: "#",
-      demo: "#"
+      demo: "#",
+      download: "#"
     },
     {
       title: "Lösenordsgenerator",
@@ -65,19 +77,20 @@ function Projects() {
       tech: "Html | CSS | Javascript",
       image: "/lösenordsgenerator-preveiw.png",
       github: "#",
-      demo: "#"
+      demo: "#",
+      download: "#"
     }
   ];
 
   return (
     <div id="projects" className="projects" ref={projectRef}>
       <h2>Projekt</h2>
-      <div className="project-container">
+      <div className="project-grid">
         {projects.map((project, index) => (
           <div
             className={`project-box ${flipped[index] ? 'flipped' : ''}`}
             key={index}
-            onClick={() => handleFlip(index)}
+            onClick={() => handleProjectClick(index)}
           >
             <div className="project-box-inner">
               <div className="project-box-front">
@@ -90,16 +103,29 @@ function Projects() {
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <p className="tech-stack">{project.tech}</p>
-                  <div className="buttons">
-                    <a href={project.github} className="button">Github</a>
-                    <a href={project.demo} className="button">Demo</a>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {selectedProject && (
+        <div className="project-detail">
+          <button className="back-button" onClick={handleBackClick}>Tillbaka</button>
+          <div className="project-detail-content">
+            <h3>{selectedProject.title}</h3>
+            <img src={selectedProject.image} alt={selectedProject.title} />
+            <p>{selectedProject.description}</p>
+            <p className="tech-stack">{selectedProject.tech}</p>
+            <div className="buttons">
+              <a href={selectedProject.github} className="button">Github</a>
+              <a href={selectedProject.demo} className="button">Demo</a>
+              <a href={selectedProject.download} className="button">Ladda ner</a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

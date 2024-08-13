@@ -1,4 +1,4 @@
-/* Container för projekt med centrering och mellanrum mellan rader */
+/* Container for projects with centering and spacing between rows */
 .projects {
   text-align: center;
   padding: 36px;
@@ -15,29 +15,28 @@
 
 .projects h2 {
   font-size: 2em;
-  margin-bottom: 20px;
-  position: relative; /* Ändra till relative för att undvika överlappning */
+  margin-bottom: 40px;
+  position: relative; 
 }
 
-/* Container för projektboxar med centrering och flex-wrap */
-.project-container {
-  display: flex;
-  flex-wrap: wrap;
+/* Grid layout for project boxes with centering and flex-wrap */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  justify-content: center;
-  max-width: 1200px; /* Justera vid behov */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Bas-styling för varje projektbox med 3D-effekt */
+/* Basic styling for each project box with 3D effect */
 .project-box {
   perspective: 1000px;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 400px;
   box-sizing: border-box;
 }
 
-/* Inre element för flip-effekt */
+/* Inner element for flip effect */
 .project-box-inner {
   position: relative;
   width: 100%;
@@ -45,14 +44,21 @@
   transform-style: preserve-3d;
   transition: transform 0.6s;
   cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Flip-effekt vid klick */
+.project-box-inner:hover {
+  transform: scale(1.05);
+}
+
+/* Flip effect on click */
 .project-box.flipped .project-box-inner {
   transform: rotateY(180deg);
 }
 
-/* Fram- och baksidan av boxen */
+/* Front and back side of the box */
 .project-box-front,
 .project-box-back {
   position: absolute;
@@ -61,18 +67,17 @@
   top: 0;
   left: 0;
   backface-visibility: hidden;
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Fram-sidan av boxen */
+/* Front side of the box */
 .project-box-front {
   background-color: transparent;
 }
 
-/* Baksidan av boxen */
+/* Back side of the box */
 .project-box-back {
   background-color: #f8f9fa;
   transform: rotateY(180deg);
@@ -80,7 +85,7 @@
   box-sizing: border-box;
 }
 
-/* Bild i boxens framsida */
+/* Image in the front side of the box */
 .project-image img {
   width: 100%;
   height: 100%;
@@ -88,7 +93,7 @@
   border-radius: 10px;
 }
 
-/* Innehåll i baksidan av boxen */
+/* Content on the back side of the box */
 .project-content {
   display: flex;
   flex-direction: column;
@@ -98,7 +103,7 @@
   width: 100%;
 }
 
-/* Rubrik och text i baksidan */
+/* Title and text on the back side */
 .project-content h3 {
   margin-top: 0;
   margin-bottom: 10px;
@@ -116,20 +121,89 @@
   margin-bottom: 10px;
 }
 
-/* Knapparna i baksidan */
-.buttons {
+/* Detailed view for project */
+.project-detail {
+  position: fixed;
+  top: 0;
+  
+  width: 87%;
+  height: 72%;
+  background-color: rgba(0, 0, 0, 0.7); /* Mindre transparent */
+  color: white;
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.button {
+/* Innehåll i projektdetaljer */
+.project-detail-content {
+  background-color: #ffffff;
+  background: linear-gradient(to bottom right, #f9f9f9, #eaeaea);
+  color: #333;
+  padding: 20px; /* Minska padding till normalt */
+  border-radius: 15px;
+  max-width: 389px; /* Ökad bredd för kortet */
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  transform: scale(0.9); /* Återgå till nästan full storlek */
+}
+
+.project-detail-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-detail-content h3 {
+  margin-top: 0;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.project-detail-content p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.project-detail .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.project-detail .button {
   background-color: #007bff;
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 12px 24px;
+  border-radius: 50px;
   text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 1.1em;
 }
 
-.button:hover {
+.project-detail .button:hover {
   background-color: #0056b3;
 }
+
+/* Tillbaka-knapp */
+.back-button {
+  position: absolute;
+  top: 40px;
+  left: 62px;
+  background-color: #1b187a; /* Ändra färg till en röd nyans */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px; /* Mindre rundad för bättre estetik */
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+
