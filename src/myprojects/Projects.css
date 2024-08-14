@@ -21,7 +21,7 @@
 /* Grid layout for project cards with spacing between items */
 .project-grid {
   display: grid; /* Minska avståndet mellan korten */
-  max-width: 1182px;
+  max-width: 1175px;
   margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .project-card:hover {
-  transform: scale(1); /* Liten förstoring vid hover */
+  transform: scale(0.9); /* Liten förstoring vid hover */
   box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4); /* Ökad ljusblå skugga vid hover */
 }
 

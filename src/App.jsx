@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from './Navbars/navbar';
-import Container from './Containers/Container';
+import Container from './Containers/Container';// Import the SocialIcons component
 import './App.css';
 
 function App() {
-  const [language, setLanguage] = useState('sv'); // Standard till svenska
+  const [language, setLanguage] = useState('sv'); // Standard language is Swedish
 
   return (
     <div className="App">
@@ -24,6 +24,7 @@ function App() {
       </div>
       <Navbar language={language} setLanguage={setLanguage} />
       <Container language={language} />
+     
     </div>
   );
 }

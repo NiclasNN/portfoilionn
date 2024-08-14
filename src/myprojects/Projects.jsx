@@ -43,7 +43,7 @@ const projectsData = {
   en: [
     {
       title: "Spotify Clone",
-      description: "I created a Spotify clone focusing on providing a user-friendly experience for both mobile devices and desktop. By using React and Material UI, I integrated the Spotify API to allow users to create and share their personal playlists directly from the web client. The result is a smooth and responsive platform for music enthusiasts to enjoy their favorites wherever they are.",
+      description: "I created a Spotify clone focusing on providing a user-friendly experience for both mobile devices and desktop. By using React and Material UI, I integrated Spotify API to allow users to create and share their personal playlists directly from the web client. The result is a smooth and responsive platform for music enthusiasts to enjoy their favorites wherever they are.",
       tech: "Html | React | CSS | Material UI | Spotify API | Spotify Playback SDK",
       image: "/spotify-preveiw.png",
       github: "#",
@@ -52,7 +52,7 @@ const projectsData = {
     },
     {
       title: "Flag App",
-      description: "I developed a flag app that uses a REST Countries API and implemented it with React, Material UI, and CSS. Users can browse flags from around the world and get detailed information about different countries' currency, national dish, and main languages. By combining React with the API, I was able to create a fast and interactive app that offers an engaging and educational experience for users exploring the world's countries.",
+      description: "I developed a flag app using the REST Countries API and implemented it with React, Material UI, and CSS. Users can browse flags from around the world and get detailed information about different countries' currency, national dish, and main language. By combining React with the API, I was able to create a fast and interactive app, offering an engaging and educational experience for users exploring the countries of the world.",
       tech: "Html | React | CSS | Material UI | Rest countries API",
       image: "/flaggapp-preveiw.png",
       github: "#",
@@ -61,7 +61,7 @@ const projectsData = {
     },
     {
       title: "Klarna Checkout",
-      description: "I created a backend project with a simple store using Fake Store API. By integrating Klarna's checkout, I was able to offer a smooth payment solution for customers. By using Node.js and Express, I managed completed payments and secure data storage. My focus was on security and providing an intuitive and user-friendly experience for the end-user.",
+      description: "I created a backend project with a simple store that uses the Fake Store API. By integrating Klarna's checkout, I was able to offer a smooth payment solution for customers. Using Node.js and Express, I handled completed payments and secure data storage. My focus was on security and offering an intuitive and user-friendly experience for the end user.",
       tech: "Node.js | Express | Klarna API | Fake Store API",
       image: "/klarna-checkout-preveiw.png",
       github: "#",
@@ -70,7 +70,7 @@ const projectsData = {
     },
     {
       title: "Password Generator",
-      description: "I developed a password generator that uses a combination of React and TypeScript to create a simple and secure tool for generating strong passwords. Users can customize the password length and complexity to meet their specific needs and security requirements. The project also included user-friendly features like visual feedback and copying options.",
+      description: "I developed a password generator using a combination of React and TypeScript to create a simple and secure tool for generating strong passwords. Users can customize the password length and complexity to suit their specific needs and security requirements. The project also included user-friendly features such as visual feedback and copy options.",
       tech: "Html | React | TypeScript | CSS",
       image: "/lösenordsgenerator-preveiw.png",
       github: "#",
@@ -108,6 +108,12 @@ function Projects({ language }) {
 
   const projects = projectsData[language] || projectsData.sv;
 
+  const buttonText = {
+    github: language === 'sv' ? 'GitHub' : 'GitHub',
+    demo: language === 'sv' ? 'Demo' : 'Demo',
+    download: language === 'sv' ? 'Ladda ner' : 'Download'
+  };
+
   return (
     <section id="projects" ref={projectRef}>
       <h2>{language === 'sv' ? 'Projekt' : 'Projects'}</h2>
@@ -119,9 +125,9 @@ function Projects({ language }) {
               <p>{project.description}</p>
               <p className="tech-stack">Tekniker: {project.tech}</p>
               <div className="buttons">
-                <a href={project.github} className="button">GitHub</a>
-                <a href={project.demo} className="button">Demo</a>
-                <a href={project.download} className="button">Ladda ner</a>
+                <a href={project.github} className="button">{buttonText.github}</a>
+                <a href={project.demo} className="button">{buttonText.demo}</a>
+                <a href={project.download} className="button">{buttonText.download}</a>
               </div>
             </div>
             <div className="project-image">
