@@ -1,6 +1,11 @@
-/* Container for projects with centering and spacing between rows */
+.projects h2{
+  margin-left: 41%;
+
+
+}/* Styles for the projects container */
+
+
 .projects {
-  text-align: center;
   padding: 36px;
   margin-top: 156px;
   opacity: 0;
@@ -13,119 +18,91 @@
   transform: translateY(0);
 }
 
-.projects h2 {
-  font-size: 2em;
-  margin-bottom: 40px;
-  position: relative; 
-}
-
-/* Grid layout for project boxes with centering and flex-wrap */
+/* Grid layout for project cards with spacing between items */
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
+  display: grid; /* Minska avståndet mellan korten */
+  max-width: 1182px;
   margin: 0 auto;
 }
 
-/* Basic styling for each project box with 3D effect */
-.project-box {
-  perspective: 1000px;
-  width: 100%;
-  height: 400px;
-  box-sizing: border-box;
-}
-
-/* Inner element for flip effect */
-.project-box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-  cursor: pointer;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-box-inner:hover {
-  transform: scale(1.05);
-}
-
-/* Flip effect on click */
-.project-box.flipped .project-box-inner {
-  transform: rotateY(180deg);
-}
-
-/* Front and back side of the box */
-.project-box-front,
-.project-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden;
+/* Basic styling for each project card with a light blue background */
+.project-card {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba(59, 130, 246, 0.2); /* Ljusblå, transparent bakgrundsfärg hela tiden */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); /* Ljusblå skugga för att matcha bakgrunden */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(0.8); /* Anpassa storlek på korten */
+  transform-origin: center;
 }
 
-/* Front side of the box */
-.project-box-front {
-  background-color: transparent;
+.project-card:hover {
+  transform: scale(1); /* Liten förstoring vid hover */
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4); /* Ökad ljusblå skugga vid hover */
 }
 
-/* Back side of the box */
-.project-box-back {
-  background-color: #f8f9fa;
-  transform: rotateY(180deg);
+/* Content inside the project card */
+.project-content {
+  flex: 1;
   padding: 20px;
-  box-sizing: border-box;
 }
 
-/* Image in the front side of the box */
+.project-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.project-content p {
+  margin-bottom: 15px;
+  color: #000001;
+  line-height: 1.6;
+}
+
+.tech-stack {
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #1f2937;
+  background-color: #e5e7eb;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #d1d5db;
+}
+
+.project-image {
+  flex-shrink: 0;
+  width: 40%;
+  position: relative;
+}
+
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-}
-
-/* Content on the back side of the box */
-.project-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  width: 100%;
-}
-
-/* Title and text on the back side */
-.project-content h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1.5em;
-}
-
-.project-content p {
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-.tech-stack {
-  font-style: italic;
-  color: #666;
-  margin-bottom: 10px;
+  border-radius: 0 12px 12px 0;
 }
 
 /* Detailed view for project */
 .project-detail {
   position: fixed;
   top: 0;
-  
   width: 87%;
   height: 72%;
   background-color: rgba(0, 0, 0, 0.7); /* Mindre transparent */
@@ -205,5 +182,3 @@
   font-size: 1em;
   transition: background-color 0.3s ease;
 }
-
-

@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Projects.css';
 
 function Projects() {
-  const [flipped, setFlipped] = useState(Array(4).fill(false));
-  const [selectedProject, setSelectedProject] = useState(null);
   const projectRef = useRef(null);
 
   useEffect(() => {
@@ -28,20 +26,6 @@ function Projects() {
       }
     };
   }, []);
-
-  const handleFlip = (index) => {
-    setFlipped((prevState) =>
-      prevState.map((state, i) => (i === index ? !state : state))
-    );
-  };
-
-  const handleProjectClick = (index) => {
-    setSelectedProject(projects[index]);
-  };
-
-  const handleBackClick = () => {
-    setSelectedProject(null);
-  };
 
   const projects = [
     {
@@ -73,8 +57,8 @@ function Projects() {
     },
     {
       title: "Lösenordsgenerator",
-      description: "Jag utvecklade en lösenordsgenerator som ger användarna möjlighet att skapa anpassade lösenord enligt deras preferenser. Användare kan välja att inkludera nummer, stora bokstäver, små bokstäver, och specialtecken, vilket ger en flexibel lösning för att skapa starka lösenord. Jag använde HTML, CSS och JavaScript för att bygga applikationen och lade särskild vikt vid användarvänlig design och funktionalitet. Det är ett enkelt men kraftfullt verktyg för att säkerställa hög nivå av säkerhet för deras konton och data.",
-      tech: "Html | CSS | Javascript",
+      description: "Jag utvecklade en lösenordsgenerator som använder en kombination av React och TypeScript för att skapa ett enkelt och säkert verktyg för att generera starka lösenord. Användare kan anpassa lösenordets längd och komplexitet för att passa deras specifika behov och säkerhetskrav. Projektet inkluderade även användarvänliga funktioner som visuell feedback och kopieringsalternativ.",
+      tech: "Html | React | TypeScript | CSS",
       image: "/lösenordsgenerator-preveiw.png",
       github: "#",
       demo: "#",
@@ -83,50 +67,28 @@ function Projects() {
   ];
 
   return (
-    <div id="projects" className="projects" ref={projectRef}>
+    <section className="projects" ref={projectRef}>
       <h2>Projekt</h2>
       <div className="project-grid">
         {projects.map((project, index) => (
-          <div
-            className={`project-box ${flipped[index] ? 'flipped' : ''}`}
-            key={index}
-            onClick={() => handleProjectClick(index)}
-          >
-            <div className="project-box-inner">
-              <div className="project-box-front">
-                <div className="project-image">
-                  <img src={project.image} alt={project.title} />
-                </div>
+          <div key={index} className="project-card">
+            <div className="project-content">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <p className="tech-stack">Tekniker: {project.tech}</p>
+              <div className="buttons">
+                <a href={project.github} className="button">GitHub</a>
+                <a href={project.demo} className="button">Demo</a>
+                <a href={project.download} className="button">Ladda ner</a>
               </div>
-              <div className="project-box-back">
-                <div className="project-content">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <p className="tech-stack">{project.tech}</p>
-                </div>
-              </div>
+            </div>
+            <div className="project-image">
+              <img src={project.image} alt={project.title} />
             </div>
           </div>
         ))}
       </div>
-
-      {selectedProject && (
-        <div className="project-detail">
-          <button className="back-button" onClick={handleBackClick}>Tillbaka</button>
-          <div className="project-detail-content">
-            <h3>{selectedProject.title}</h3>
-            <img src={selectedProject.image} alt={selectedProject.title} />
-            <p>{selectedProject.description}</p>
-            <p className="tech-stack">{selectedProject.tech}</p>
-            <div className="buttons">
-              <a href={selectedProject.github} className="button">Github</a>
-              <a href={selectedProject.demo} className="button">Demo</a>
-              <a href={selectedProject.download} className="button">Ladda ner</a>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+    </section>
   );
 }
 
