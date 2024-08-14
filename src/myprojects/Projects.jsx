@@ -1,33 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './Projects.css';
 
-function Projects() {
-  const projectRef = useRef(null);
-
-  useEffect(() => {
-    const callback = (entries) => {
-      const [entry] = entries;
-      if (entry.isIntersecting) {
-        projectRef.current.classList.add('visible');
-      } else {
-        projectRef.current.classList.remove('visible');
-      }
-    };
-
-    const observer = new IntersectionObserver(callback, { threshold: 0.1 });
-
-    if (projectRef.current) {
-      observer.observe(projectRef.current);
-    }
-
-    return () => {
-      if (projectRef.current) {
-        observer.unobserve(projectRef.current);
-      }
-    };
-  }, []);
-
-  const projects = [
+const projectsData = {
+  sv: [
     {
       title: "Spotify-klon",
       description: "Jag skapade en Spotify klon med fokus på att erbjuda en användarvänlig upplevelse både för mobile enheter och desktop. Genom att använda React och Material UI integrerade jag Spotify API för att låta användarna skapa och dela sina personliga spellistor direkt från webbklienten. Resultatet är en smidig och responsiv plattform för musikentusiaster att njuta av sina favoriter var de än är.",
@@ -64,11 +39,78 @@ function Projects() {
       demo: "#",
       download: "#"
     }
-  ];
+  ],
+  en: [
+    {
+      title: "Spotify Clone",
+      description: "I created a Spotify clone focusing on providing a user-friendly experience for both mobile devices and desktop. By using React and Material UI, I integrated the Spotify API to allow users to create and share their personal playlists directly from the web client. The result is a smooth and responsive platform for music enthusiasts to enjoy their favorites wherever they are.",
+      tech: "Html | React | CSS | Material UI | Spotify API | Spotify Playback SDK",
+      image: "/spotify-preveiw.png",
+      github: "#",
+      demo: "#",
+      download: "#"
+    },
+    {
+      title: "Flag App",
+      description: "I developed a flag app that uses a REST Countries API and implemented it with React, Material UI, and CSS. Users can browse flags from around the world and get detailed information about different countries' currency, national dish, and main languages. By combining React with the API, I was able to create a fast and interactive app that offers an engaging and educational experience for users exploring the world's countries.",
+      tech: "Html | React | CSS | Material UI | Rest countries API",
+      image: "/flaggapp-preveiw.png",
+      github: "#",
+      demo: "#",
+      download: "#"
+    },
+    {
+      title: "Klarna Checkout",
+      description: "I created a backend project with a simple store using Fake Store API. By integrating Klarna's checkout, I was able to offer a smooth payment solution for customers. By using Node.js and Express, I managed completed payments and secure data storage. My focus was on security and providing an intuitive and user-friendly experience for the end-user.",
+      tech: "Node.js | Express | Klarna API | Fake Store API",
+      image: "/klarna-checkout-preveiw.png",
+      github: "#",
+      demo: "#",
+      download: "#"
+    },
+    {
+      title: "Password Generator",
+      description: "I developed a password generator that uses a combination of React and TypeScript to create a simple and secure tool for generating strong passwords. Users can customize the password length and complexity to meet their specific needs and security requirements. The project also included user-friendly features like visual feedback and copying options.",
+      tech: "Html | React | TypeScript | CSS",
+      image: "/lösenordsgenerator-preveiw.png",
+      github: "#",
+      demo: "#",
+      download: "#"
+    }
+  ]
+};
+
+function Projects({ language }) {
+  const projectRef = useRef(null);
+
+  useEffect(() => {
+    const callback = (entries) => {
+      const [entry] = entries;
+      if (entry.isIntersecting) {
+        projectRef.current.classList.add('visible');
+      } else {
+        projectRef.current.classList.remove('visible');
+      }
+    };
+
+    const observer = new IntersectionObserver(callback, { threshold: 0.1 });
+
+    if (projectRef.current) {
+      observer.observe(projectRef.current);
+    }
+
+    return () => {
+      if (projectRef.current) {
+        observer.unobserve(projectRef.current);
+      }
+    };
+  }, []);
+
+  const projects = projectsData[language] || projectsData.sv;
 
   return (
-    <section className="projects" ref={projectRef}>
-      <h2>Projekt</h2>
+    <section id="projects" ref={projectRef}>
+      <h2>{language === 'sv' ? 'Projekt' : 'Projects'}</h2>
       <div className="project-grid">
         {projects.map((project, index) => (
           <div key={index} className="project-card">

@@ -1,11 +1,11 @@
-.projects h2{
+#projects h2{
   margin-left: 41%;
 
 
 }/* Styles for the projects container */
 
 
-.projects {
+#projects {
   padding: 36px;
   margin-top: 156px;
   opacity: 0;
@@ -13,7 +13,7 @@
   transition: opacity 1s ease-in, transform 1s ease-in;
 }
 
-.projects.visible {
+#projects.visible {
   opacity: 1;
   transform: translateY(0);
 }
