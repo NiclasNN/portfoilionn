@@ -5,7 +5,8 @@
   position: absolute;
   top: 0;
   z-index: 10;
-  padding: 1rem 0;
+  padding: 1rem 0;overflow: hidden;
+  
 }
 
 .navbar {
@@ -17,6 +18,7 @@
   width: 80%;
   margin: 0 auto;
   border-radius: 5px;
+  
 }
 
 .navbar-brand a {
