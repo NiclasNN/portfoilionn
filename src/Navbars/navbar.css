@@ -5,7 +5,7 @@
   position: absolute;
   top: 0;
   z-index: 10;
-  padding: 1rem 0;overflow: hidden;
+  padding: 1rem 0;
   
 }
 
@@ -113,8 +113,9 @@
   .navbar-flag {
     width: 32px;
     height: 32px;
-    margin-left: 0; */
+    margin-left: 0; 
     cursor: pointer;
     transition: transform 0.3s ease;
 
+}
 }

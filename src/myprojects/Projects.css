@@ -186,7 +186,15 @@
 }
 
 /* Media Query for Mobile Devices (max-width: 768px) */
+/* Media Query for Mobile Devices (max-width: 768px) */
+/* Media Query for Mobile Devices (max-width: 768px) */
 @media (max-width: 768px) {
+
+
+ #projects h2 {
+    margin-left: 0px;
+}
+
 
   /* Adjust the #projects padding and margin for smaller screens */
   #projects {
@@ -205,6 +213,20 @@
   .project-card {
     flex-direction: column; /* Stack content vertically */
     transform: scale(1); /* Keep original size on mobile */
+    transition: none; /* Remove transition effect */
+  }
+
+  /* Remove hover effects on mobile */
+  .project-card:hover {
+    transform: none; /* Disable scaling on hover */
+    box-shadow: none; /* Disable box shadow change on hover */
+  }
+
+  /* Adjust the project image width, order, and alignment */
+  .project-image {
+    width: 100%; /* Full width on mobile */
+    order: -1; /* Place image before text */
+    margin-bottom: 15px; /* Add margin to separate content from image */
   }
 
   /* Adjust text alignment and padding inside project content */
@@ -223,12 +245,6 @@
     margin-bottom: 10px;
     font-size: 1rem; /* Reduce font size slightly */
     line-height: 1.5;
-  }
-
-  /* Adjust the project image width and alignment */
-  .project-image {
-    width: 100%; /* Full width on mobile */
-    margin-top: 15px; /* Add margin to separate content from image */
   }
 
   /* Adjust the button layout and size on mobile */

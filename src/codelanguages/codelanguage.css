@@ -36,3 +36,21 @@ h2 {
   color: #1a202c;
   margin-bottom: 36px; /* 40px - 10% = 36px */
 }
+
+
+@media (max-width: 768px) {
+
+  .frontendandbackend {
+    text-align: center;
+    padding: 0px; /* 40px - 10% = 36px */
+    margin-top: 156px; /* 173px - 10% = 156px */
+    opacity: 0;
+    transform: translateY(45px); /* 50px - 10% = 45px */
+    transition: opacity 1s ease-in, transform 1s ease-in;
+  }
+  
+
+
+
+
+}

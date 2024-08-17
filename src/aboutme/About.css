@@ -47,56 +47,55 @@
 
 
 /* Media Query for Mobile Devices (max-width: 768px) */
+/* Media Query for Mobile Devices (max-width: 768px) */
 @media (max-width: 768px) {
 
-  /* Adjust the about-container layout for smaller screens */
+  /* Justera layouten för mindre skärmar */
   .about-container {
-    flex-direction: column; /* Stack image and text vertically */
-    padding: 1rem; /* Reduce padding on mobile */
-    margin-top: 10%; /* Adjust top margin for better alignment */
-    border-radius: 10%; /* Reduce border radius for a more rectangular look */
+    flex-direction: column; /* Stapla bild och text vertikalt */
+    padding: 1rem; /* Minska padding på mobilen */
+    margin-top: 5%; /* Justera top margin för bättre anpassning */
+    border-radius: 15%; /* Minska border-radius för en mer rektangulär look */
   }
 
-  /* Center the text on smaller screens */
-  .about-container p {
-    max-width: 100%; /* Allow text to take full width */
-    text-align: center; /* Center the text */
-    font-size: 1rem; /* Slightly reduce font size */
-    line-height: 1.4; /* Adjust line height for better readability */
-    margin-left: 0; /* Remove left margin */
-  }
-
-  /* Adjust the image size and alignment */
+  /* Ändra ordningen på elementen */
   .about-image {
-    width: 80%; /* Reduce image width */
-    margin-top: 1rem; /* Add space between text and image */
-    align-self: center; /* Center the image */
+    order: -1; /* Placera bilden först */
+    width: 60%; /* Minska bildens bredd */
+    margin-bottom: 2rem; /* Lägg till utrymme mellan bild och text */
+    align-self: center; /* Centrera bilden */
+    transform: scale(1); /* Återställ storleken till 100% */
+  }
+
+  /* Centrera texten på mindre skärmar */
+  .about-container p {
+    max-width: 100%; /* Tillåt texten att ta full bredd */
+    text-align: center; /* Centrera texten */
+    font-size: 1rem; /* Justera fontstorleken */
+    line-height: 1.4; /* Justera radavstånd för bättre läsbarhet */
+    margin-left: 0; /* Ta bort vänstermarginal */
+    margin-top: 0; /* Ta bort toppmarginal */
   }
 }
 
 /* Media Query for Very Small Devices (max-width: 480px) */
 @media (max-width: 480px) {
 
-  /* Further adjustments for very small screens */
+  /* Ytterligare justeringar för mycket små skärmar */
   .about-container {
-    padding: 0.5rem; /* Reduce padding further */
-    margin-top: 5%; /* Reduce top margin */
+    padding: 0.5rem; /* Minska padding ytterligare */
+    margin-top: 3%; /* Minska toppmarginal */
   }
 
-  /* Further reduce font size and line height */
+  /* Ytterligare minskning av fontstorlek och radavstånd */
   .about-container p {
-    font-size: 0.9rem; /* Smaller font size */
-    line-height: 1.3; /* Tighter line height */
+    font-size: 0.9rem; /* Mindre fontstorlek */
+    line-height: 1.3; /* Tightare radavstånd */
   }
 
-  /* Adjust the image for very small screens */
+  /* Justera bilden för mycket små skärmar */
   .about-image {
-    width: 100%; /* Full width image */
+    width: 70%; /* Nästan full bredd för bilden */
+    transform: scale(1); /* Återställ storleken till 100% */
   }
-}
-
-
-.about-container.visible .about-image {
-  opacity: 1;
-  transform: scale(0.7); /* Zooma in till normal storlek */
 }
