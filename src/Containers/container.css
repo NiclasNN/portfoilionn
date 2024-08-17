@@ -50,7 +50,7 @@
   display: flex;
   justify-content: center;
   gap: 50px;
-  margin-top: 100px; /* Adjust this value as needed to position the boxes below the navbar */
+  margin-top: 130px; /* Adjust this value as needed to position the boxes below the navbar */
 }
 
 #boxen {
@@ -166,4 +166,56 @@ h3 {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 0; /* Tar bort eventuell padding som kan orsaka överflöd */
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Centrera texten */
+    overflow: hidden;
+  }
+
+  .my-image {
+    height: 40vw;
+        width: 40vw;
+        margin: 24px auto;
+        position: static;
+        align-items: center;
+        justify-content: center;
+        margin-left: 18% /* Ta bort absolut positionering */
+  }
+
+  #boxen {
+    width: 225vw;
+        margin: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+    }/* Se till att padding inte påverkar bredden */
+  
+
+  #boxen2 {
+    width: 90vw; /* Gör boxen bredare på mindre skärmar */
+    margin: 64px auto; /* Centrera boxen horisontellt */
+    padding: 10px;
+    box-sizing: border-box; /* Se till att padding inte påverkar bredden */
+  }
+
+  #boxen2 h1 {
+    font-size: 2.5rem; /* Minska textstorleken ytterligare */
+    margin: 5px 0;
+  }
+
+  #boxen2 h2, h3 {
+    font-size: 2rem; /* Minska textstorleken ytterligare för mindre skärmar */
+    margin: 5px 0;
+  }
+
+  #contactme {
+    font-size: 12px; /* Minska textstorleken på knappen ytterligare */
+    padding: 10px 20px; /* Anpassa knappen för mindre skärmar */
+    margin-bottom: 20px; /* Minska bottenmarginalen */
+  }
 }

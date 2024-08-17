@@ -21,6 +21,9 @@ function Navbar({ language, setLanguage }) {
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth' });
             }
+
+            // Stäng menyn efter klick på en länk
+            setMenuOpen(false);
         };
 
         const links = document.querySelectorAll('.navbar-links a');
