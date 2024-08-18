@@ -185,9 +185,7 @@
   transition: background-color 0.3s ease;
 }
 
-/* Media Query for Mobile Devices (max-width: 768px) */
-/* Media Query for Mobile Devices (max-width: 768px) */
-/* Media Query for Mobile Devices (max-width: 768px) */
+
 @media (max-width: 768px) {
 
 
@@ -258,4 +256,78 @@
     margin-bottom: 10px; /* Add space between buttons */
     font-size: 1rem; /* Adjust font size */
   }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+
+#projects h2 {
+  margin-left: 0px;
+}
+
+
+/* Adjust the #projects padding and margin for smaller screens */
+#projects {
+  padding: 20px;
+  margin-top: 80px;
+}
+
+/* Adjust the grid layout to a single column for better readability */
+.project-grid {
+  grid-template-columns: 1fr; /* Single column layout */
+  gap: 20px; /* Add some spacing between project cards */
+  max-width: 100%; /* Use full screen width */
+}
+
+/* Adjust the project card layout for smaller screens */
+.project-card {
+  flex-direction: column; /* Stack content vertically */
+  transform: scale(1); /* Keep original size on mobile */
+  transition: none; /* Remove transition effect */
+}
+
+/* Remove hover effects on mobile */
+.project-card:hover {
+  transform: none; /* Disable scaling on hover */
+  box-shadow: none; /* Disable box shadow change on hover */
+}
+
+/* Adjust the project image width, order, and alignment */
+.project-image {
+  width: 100%; /* Full width on mobile */
+  order: -1; /* Place image before text */
+  margin-bottom: 15px; /* Add margin to separate content from image */
+}
+
+/* Adjust text alignment and padding inside project content */
+.project-content {
+  padding: 15px;
+  text-align: center; /* Center-align text on mobile */
+}
+
+/* Adjust the font size of the project titles */
+.project-content h3 {
+  font-size: 1.5rem; /* Slightly smaller font size */
+}
+
+/* Adjust paragraph font size and line height */
+.project-content p {
+  margin-bottom: 10px;
+  font-size: 1rem; /* Reduce font size slightly */
+  line-height: 1.5;
+}
+
+/* Adjust the button layout and size on mobile */
+.buttons {
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center;
+}
+
+.button {
+  width: 80%; /* Increase button width */
+  margin-bottom: 10px; /* Add space between buttons */
+  font-size: 1rem; /* Adjust font size */
+}
 }

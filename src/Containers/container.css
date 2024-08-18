@@ -169,7 +169,7 @@ h3 {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 413px) {
   .container {
     padding: 0; /* Tar bort eventuell padding som kan orsaka överflöd */
     display: flex;
@@ -190,7 +190,7 @@ h3 {
 
   #boxen {
     width: 225vw;
-        margin: 5px;
+        margin: -5px;
         padding: 10px;
         box-sizing: border-box;
     }/* Se till att padding inte påverkar bredden */
@@ -218,4 +218,404 @@ h3 {
     padding: 10px 20px; /* Anpassa knappen för mindre skärmar */
     margin-bottom: 20px; /* Minska bottenmarginalen */
   }
+}
+
+
+
+
+@media only screen and (min-width: 400px) and  (max-width: 450px) {
+  .container {
+    padding: 0; /* Tar bort eventuell padding som kan orsaka överflöd */
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Centrera texten */
+    overflow: hidden;
+  }
+
+  .my-image {
+    height: 40vw;
+        width: 40vw;
+        margin: 24px auto;
+        position: static;
+        align-items: center;
+        justify-content: center;
+        margin-left: 18% /* Ta bort absolut positionering */
+  }
+
+  #boxen {
+    width: 225vw;
+        margin: -43px;
+        padding: 10px;
+        box-sizing: border-box;
+    }/* Se till att padding inte påverkar bredden */
+  
+
+  #boxen2 {
+    width: 90vw; /* Gör boxen bredare på mindre skärmar */
+    margin: 64px auto; /* Centrera boxen horisontellt */
+    padding: 10px;
+    box-sizing: border-box; /* Se till att padding inte påverkar bredden */
+  }
+
+  #boxen2 h1 {
+    font-size: 2.5rem; /* Minska textstorleken ytterligare */
+    margin: 5px 0;
+  }
+
+  #boxen2 h2, h3 {
+    font-size: 2rem; /* Minska textstorleken ytterligare för mindre skärmar */
+    margin: 5px 0;
+  }
+
+  #contactme {
+    font-size: 12px; /* Minska textstorleken på knappen ytterligare */
+    padding: 10px 20px; /* Anpassa knappen för mindre skärmar */
+    margin-bottom: 20px; /* Minska bottenmarginalen */
+  }
+}
+
+
+
+
+
+
+@media only screen and (min-width: 460px) and (max-width: 1024px) {
+
+  /* Justera container layouten */
+  .container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* Justera profilbilden */
+  .my-image {
+    height: 400px;
+    width: 400px;
+    margin: -388px auto;
+    position: static;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+  }
+
+  /* Justera layouten för #boxen */
+  #boxen {
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Justera layouten för #boxen2 */
+  #boxen2 {
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: static;
+    left: 0;
+    top: 0;
+  }
+
+
+  .boxes {
+    display:block ;
+    
+    gap: 50px;
+    margin-top: 130px; /* Adjust this value as needed to position the boxes below the navbar */
+  }
+
+  /* Justera rubriker */
+  #boxen2 h1 {
+    font-size: 3rem;  /* Minska storleken något för bättre passform */
+  }
+
+  #boxen2 h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  /* Justera kontakta mig-knappen */
+  #contactme {
+    font-size: 14px;
+    padding: 12px 24px;
+    margin-bottom: 40px;
+  }
+}
+
+
+
+@media only screen and (min-width: 539px) and (max-width: 540px) {
+
+
+  /* Justera container layouten */
+  
+    /* margin: 0; */
+    .my-image {
+      height: 40vw;
+      width: 40vw;
+      margin: -378px auto;
+      position: static;
+      align-items: center;
+      justify-content: center;
+      margin-left: 18%;
+}
+
+}
+
+@media only screen and (min-height: 739px) and (max-height: 740px) {
+
+
+  #boxen{
+  width: 225vw;
+        margin: 13px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+
+
+
+}
+
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 600px) and (max-height: 600px) {
+  /* CSS som endast tillämpas på Nest Hub */
+
+
+/* Exkludera enheter med exakt upplösning 1024x600 (Nest Hub) */
+.container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Tillåt scrollning inom containern */
+
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px); /* Adjust the float height if needed */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+
+.my-image {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px; /* Make it a square for better alignment */
+  margin-bottom: 10px;
+  animation: float 3s ease-in-out infinite;
+  background: linear-gradient(135deg, #3F72AF 0%, #112D4E 100%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  right:430px;
+  top: 447px;
+
+  
+}
+
+.my-image img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.boxes {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 130px; /* Adjust this value as needed to position the boxes below the navbar */
+}
+
+#boxen {
+  height: 457px;
+  width: 363px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 10px;
+ margin-top: 10px;  
+ margin-left: 800px;
+}
+
+
+
+#boxen2{
+
+  height: 600px;
+  width: 600px;
+  display: flex;
+  position: relative;
+  left:450px;
+  top:150px;
+  flex-direction: column;
+
+}
+
+#boxen2 h1 {
+  font-size: 4.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #082d59;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  margin:20px;
+  
+}
+
+#boxen2 h2 {
+  font-size: 2.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #082d59;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  margin:1px;
+  
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  margin: 5px;
+  text-decoration: none;
+}
+
+#contactme {
+  text-decoration: none; /* Tar bort understrykning */
+  padding: 10.56px 10.12px; /* 12px * 0.88 ≈ 10.56px och 24px * 0.88 ≈ 21.12px */
+  background: #4a90e2; /* En elegant blå färg */
+  border-radius: 30px; /* 20px * 0.88 ≈ 17.6px */
+  font-size: 14.08px; /* 16px * 0.88 ≈ 14.08px */
+  margin-bottom: 88px; /* 100px * 0.88 ≈ 88px */
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 3.52px 7.04px rgba(0, 0, 0, 0.2); /* 0 4px 8px * 0.88 */
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* Ser till att effekten stannar inom knappen */
+  color: #ffffff; /* Vit textfärg för bättre kontrast */
+}
+
+#contactme::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px; /* Samma radie som knappen */
+  border: 4px solid transparent;
+  background: linear-gradient(45deg, #187366, #1addb9, #50e3c2);
+  background-size: 200% 200%;
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: -1;
+}
+
+#contactme:hover::before {
+  opacity: 1;
+  animation: gradientMove 4s linear infinite;
+}
+
+#contactme:hover {
+  background: #274b78; /* Mörkare blå nyans */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Rättad rad för box-shadow */
+  transform: scale(1.05);
+  cursor: pointer;
+  text-decoration: none; /* Säkerställ att understrykning inte visas vid hover */
+}
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+@media only screen and (max-width: 413px) {
+  .container {
+    padding: 0; /* Tar bort eventuell padding som kan orsaka överflöd */
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Centrera texten */
+    overflow: hidden;
+  }
+
+  .my-image {
+    height: 40vw;
+        width: 40vw;
+        margin: 24px auto;
+        position: static;
+        align-items: center;
+        justify-content: center;
+        margin-left: 18% /* Ta bort absolut positionering */
+  }
+
+  #boxen {
+    width: 225vw;
+        margin: -5px;
+        padding: 10px;
+        box-sizing: border-box;
+    }/* Se till att padding inte påverkar bredden */
+  
+
+  #boxen2 {
+    width: 90vw; /* Gör boxen bredare på mindre skärmar */
+    margin: 64px auto; /* Centrera boxen horisontellt */
+    padding: 10px;
+    box-sizing: border-box; /* Se till att padding inte påverkar bredden */
+  }
+
+  #boxen2 h1 {
+    font-size: 2.5rem; /* Minska textstorleken ytterligare */
+    margin: 5px 0;
+  }
+
+  #boxen2 h2, h3 {
+    font-size: 2rem; /* Minska textstorleken ytterligare för mindre skärmar */
+    margin: 5px 0;
+  }
+
+  #contactme {
+    font-size: 12px; /* Minska textstorleken på knappen ytterligare */
+    padding: 10px 20px; /* Anpassa knappen för mindre skärmar */
+    margin-bottom: 20px; /* Minska bottenmarginalen */
+  }
+}
+
+
+
 }
