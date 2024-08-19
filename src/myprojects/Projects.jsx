@@ -8,7 +8,6 @@ const projectsData = {
       description: "Jag skapade en Spotify klon med fokus på att erbjuda en användarvänlig upplevelse både för mobile enheter och desktop. Genom att använda React och Material UI integrerade jag Spotify API för att låta användarna skapa och dela sina personliga spellistor direkt från webbklienten. Resultatet är en smidig och responsiv plattform för musikentusiaster att njuta av sina favoriter var de än är.",
       tech: "Html | React | CSS | Material UI | Spotify API | Spotify Playback SDK",
       image: "/spotify-preveiw.png",
-      
       demo: "#",
       download: "#"
     },
@@ -17,8 +16,7 @@ const projectsData = {
       description: "Jag utvecklade en flaggapp som använder en REST Countries API och implementerade den med React, Material UI och CSS. Användare kan bläddra bland flaggor från hela världen och få detaljerad information om olika länders valuta, nationalrätt och huvudspråk. Genom att kombinera React med API:et kunde jag skapa en snabb och interaktiv app, som erbjuder en engagerande och lärorik upplevelse för användare som utforskar världens länder.",
       tech: "Html | React | CSS | Material UI | Rest countries API",
       image: "/flaggapp-preveiw.png",
-     
-      demo: "#",
+      demo: "https://countriesoftheworld-nn.netlify.app/",
       download: "#"
     },
     {
@@ -26,7 +24,6 @@ const projectsData = {
       description: "Jag skapade ett backend projekt med en enkel butik som använder Fake Store API. Genom att integrera Klarnas checkout kunde jag erbjuda en smidig betalningslösning för kunderna. Genom att använda Node.js och Express kunde jag hantera genomförda betalningar och säker lagring av data. Mitt fokus låg på säkerhet och att erbjuda en intuitiv och användarvänlig upplevelse för slutanvändaren.",
       tech: "Node.js | Express | Klarna API | Fake Store API",
       image: "/klarna-checkout-preveiw.png",
-      
       demo: "#",
       download: "#"
     },
@@ -35,8 +32,7 @@ const projectsData = {
       description: "Jag utvecklade en lösenordsgenerator som använder en kombination av React och TypeScript för att skapa ett enkelt och säkert verktyg för att generera starka lösenord. Användare kan anpassa lösenordets längd och komplexitet för att passa deras specifika behov och säkerhetskrav. Projektet inkluderade även användarvänliga funktioner som visuell feedback och kopieringsalternativ.",
       tech: "Html | React | TypeScript | CSS",
       image: "/lösenordsgenerator-preveiw.png",
-   
-      demo: "#",
+      demo: "https://losenordsgenerator.netlify.app/",
       download: "#"
     }
   ],
@@ -54,7 +50,7 @@ const projectsData = {
       description: "I developed a flag app using the REST Countries API and implemented it with React, Material UI, and CSS. Users can browse flags from around the world and get detailed information about different countries' currency, national dish, and main language. By combining React with the API, I was able to create a fast and interactive app, offering an engaging and educational experience for users exploring the countries of the world.",
       tech: "Html | React | CSS | Material UI | Rest countries API",
       image: "/flaggapp-preveiw.png",
-      demo: "#",
+      demo: "https://countriesoftheworld-nn.netlify.app/",
       download: "#"
     },
     {
@@ -70,7 +66,7 @@ const projectsData = {
       description: "I developed a password generator using a combination of React and TypeScript to create a simple and secure tool for generating strong passwords. Users can customize the password length and complexity to suit their specific needs and security requirements. The project also included user-friendly features such as visual feedback and copy options.",
       tech: "Html | React | TypeScript | CSS",
       image: "/lösenordsgenerator-preveiw.png",
-      demo: "#",
+      demo: "https://losenordsgenerator.netlify.app/",
       download: "#"
     }
   ]
@@ -111,6 +107,9 @@ function Projects({ language }) {
 
   return (
     <section id="projects" ref={projectRef}>
+      <div className="above-h2"> {/* Ny div ovanför h2 */}
+        {/* Lägg till innehåll eller stil här om det behövs */}
+      </div>
       <h2>{language === 'sv' ? 'Projekt' : 'Projects'}</h2>
       <div className="project-grid">
         {projects.map((project, index) => (
@@ -120,8 +119,22 @@ function Projects({ language }) {
               <p>{project.description}</p>
               <p className="tech-stack">Tekniker: {project.tech}</p>
               <div className="buttons">
-                <a href={project.demo} className="button">{buttonText.demo}</a>
-                <a href={project.download} className="button">{buttonText.download}</a>
+                <a 
+                  href={project.demo} 
+                  className="button" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  {buttonText.demo}
+                </a>
+                <a 
+                  href={project.download} 
+                  className="button" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  {buttonText.download}
+                </a>
               </div>
             </div>
             <div className="project-image">

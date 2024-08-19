@@ -39,10 +39,13 @@
 }
 
 .footer-section ul {
-  list-style: none;
-  padding: 0;
+ 
+    list-style: none;
+    padding: 0;
+    text-decoration: underline;
+ }
 
-}
+
 
 .footer-section ul li {
   margin-bottom: 10px;

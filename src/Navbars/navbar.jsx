@@ -9,20 +9,28 @@ function Navbar({ language, setLanguage }) {
             const href = event.target.getAttribute('href');
             if (!href) return;
 
-            if (href.startsWith('mailto:')) return;
+            if (href.startsWith('mailto:') || href.endsWith('.pdf')) return;
+
+            event.preventDefault(); // Hindrar webbläsaren från att följa länken för vanliga länkar
+
+            let targetSection = null;
 
             if (href === '#home') {
-                event.preventDefault();
-                const targetSection = document.querySelector('.boxes');
-                if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth' });
+                targetSection = document.querySelector('.container');
+            } else if (href === '#about') {
+                targetSection = document.querySelector('.hej-box');
+            } else if (href === '#projects') {
+                targetSection = document.getElementById('projects');
             } else if (href.startsWith('#')) {
-                event.preventDefault();
                 const targetId = href.replace('#', '');
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth' });
+                targetSection = document.getElementById(targetId);
             }
 
-            // Stäng menyn efter klick på en länk
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Stänger menyn efter klick på en länk
             setMenuOpen(false);
         };
 

@@ -191,6 +191,7 @@
 
  #projects h2 {
     margin-left: 0px;
+    margin-top: 274px;
 }
 
 
@@ -330,4 +331,13 @@
   margin-bottom: 10px; /* Add space between buttons */
   font-size: 1rem; /* Adjust font size */
 }
+}
+
+
+.above-h2 {
+  height: 140px;
+    width: 36px;
+    /* position: fixed; */
+    
+  /* Exempelvis för att skapa lite utrymme ovanför h2 */
 }

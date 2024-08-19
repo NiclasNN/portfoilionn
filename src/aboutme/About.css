@@ -4,9 +4,9 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  margin-top: 18%;
+  margin-top: 44%;
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 20%;
+  border-radius: 40%;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease-in, transform 1s ease-out;
@@ -99,3 +99,15 @@
     transform: scale(1); /* Återställ storleken till 100% */
   }
 }
+
+
+.hej-box {
+  height: 30px;
+    width: 300px;
+   
+    position: absolute;
+    opacity: 1;
+    transform: scale(1);
+    top:900px;
+}
+

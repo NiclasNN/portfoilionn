@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './footer.css';
 
 function Footer({ language }) {
-    // Text baserad på det valda språket
     const text = {
         developerName: language === 'sv' ? 'Niclas Norman' : 'Niclas Norman',
         description: language === 'sv' 
@@ -14,9 +13,39 @@ function Footer({ language }) {
         projects: language === 'sv' ? 'Projekt' : 'Projects',
         cv: language === 'sv' ? 'CV' : 'Resume',
         contact: language === 'sv' ? 'Kontakta' : 'Contact',
-        city: language === 'sv' ? 'Täby, Stockholm' : 'Täby, Stockholm',
+        city: language === 'sv' ? 'Norrtälje, Stockholm' : 'Norrtälje, Stockholm',
         copyright: language === 'sv' ? '© 2024 - Niclas Norman' : '© 2024 - Niclas Norman'
     };
+
+    useEffect(() => {
+        const handleScroll = (event) => {
+            const href = event.target.getAttribute('href');
+            if (!href.startsWith('#')) return;
+
+            event.preventDefault();
+
+            let targetSection;
+
+            if (href === '#about') {
+                targetSection = document.querySelector('.hej-box');
+            } else if (href === '#home') {
+                targetSection = document.querySelector('.container');
+            } else if (href === '#projects') {
+                targetSection = document.getElementById('projects');
+            }
+
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+
+        const links = document.querySelectorAll('.footer-section a[href^="#"]');
+        links.forEach(link => link.addEventListener('click', handleScroll));
+
+        return () => {
+            links.forEach(link => link.removeEventListener('click', handleScroll));
+        };
+    }, []);
 
     return (
         <footer className="footer-container">
