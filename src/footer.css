@@ -1,0 +1,71 @@
+.footer-container {
+  background-color: #c0d6ed;
+  padding: 26px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #0a2d54;
+  width: 100%;
+  height: 80%; 
+  
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  padding: 0 20px; /* Lägg till padding om det behövs för inre utrymme */
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.footer-section p, 
+.footer-section ul {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #0a2d54;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-section ul li a:hover {
+  color: #1f77b4;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  width: 100%; /* Täcker hela sidans bredd */
+  padding: 0 20px; /* Padding på sidorna */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+}

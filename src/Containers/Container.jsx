@@ -1,9 +1,9 @@
 import React from 'react';
-import './container.css';
-import About from '../aboutme/About';
-import Projects from '../myprojects/Projects';
-
-import Codelanguage from '../codelanguages/Codelanguage';
+import './container.css';              // Importera CSS för Container-komponenten
+import About from '../aboutme/About';  // Importera About-komponenten
+import Projects from '../myprojects/Projects';  // Importera Projects-komponenten
+import Codelanguage from '../codelanguages/Codelanguage';  // Importera Codelanguage-komponenten
+import Footer from "../Footer.jsx";    // Importera Footer-komponenten
 
 const Container = ({ children, language }) => {
   return (
@@ -26,6 +26,7 @@ const Container = ({ children, language }) => {
           <h3>{language === 'sv' ? 'Kontakta mig' : 'Contact me'}</h3>
         </a>
       </div>
+      <Footer language={language} />  {/* Skicka language-prop till Footer */}
     </div>
   );
 };
