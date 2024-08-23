@@ -6,37 +6,56 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden; /* Tillåt scrollning inom containern */
-
 }
 
+/* Animation för att slida in från vänster */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
+/* Animation för att flyta */
 @keyframes float {
   0% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px); /* Adjust the float height if needed */
+    transform: translateY(-10px); /* Justera höjden på float om det behövs */
   }
   100% {
     transform: translateY(0px);
   }
 }
 
+/* Klass för initial slide-in animation */
+.slide-in {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
 
-
+/* Klass för flytande animation */
 .my-image {
   border-radius: 50%;
   height: 300px;
-  width: 300px; /* Make it a square for better alignment */
+  width: 300px; /* Gör den till en kvadrat för bättre inriktning */
   margin-bottom: 10px;
-  animation: float 3s ease-in-out infinite;
   background: linear-gradient(135deg, #3F72AF 0%, #112D4E 100%);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   position: relative;
-  right:430px;
+  right: 430px;
   top: 107px;
+  animation: float 3s ease-in-out infinite;
+  opacity: 1; /* Se till att bilden inte är osynlig */
+}
 
-  
+/* När initial slide-in animation är klar, starta flytande animation */
+.slide-in.my-image {
+  animation: slideInFromLeft 1s ease-out forwards, float 3s ease-in-out infinite;
 }
 
 .my-image img {
@@ -50,7 +69,7 @@
   display: flex;
   justify-content: center;
   gap: 50px;
-  margin-top: 130px; /* Adjust this value as needed to position the boxes below the navbar */
+  margin-top: 130px; /* Justera detta värde efter behov för att positionera rutorna under navigeringsfältet */
 }
 
 #boxen {
@@ -60,22 +79,18 @@
   flex-direction: column;
   border-radius: 15px;
   padding: 10px;
- margin-top: 10px;  
- margin-left: 800px;
+  margin-top: 10px;  
+  margin-left: 800px;
 }
 
-
-
-#boxen2{
-
+#boxen2 {
   height: 600px;
   width: 600px;
   display: flex;
   position: relative;
-  left:450px;
-  top:150px;
+  left: 450px;
+  top: 150px;
   flex-direction: column;
-
 }
 
 #boxen2 h1 {
@@ -85,8 +100,7 @@
   color: #082d59;
   text-transform: none;
   letter-spacing: 0.5px;
-  margin:20px;
-  
+  margin: 20px;
 }
 
 #boxen2 h2 {
@@ -96,8 +110,7 @@
   color: #082d59;
   text-transform: none;
   letter-spacing: 0.5px;
-  margin:1px;
-  
+  margin: 1px;
 }
 
 a {
@@ -117,7 +130,7 @@ h3 {
 }
 
 #contactme {
-  text-decoration: none; /* Tar bort understrykning */
+  text-decoration: none; /* Ta bort understrykning */
   padding: 10.56px 10.12px; /* 12px * 0.88 ≈ 10.56px och 24px * 0.88 ≈ 21.12px */
   background: #4a90e2; /* En elegant blå färg */
   border-radius: 30px; /* 20px * 0.88 ≈ 17.6px */
@@ -161,13 +174,11 @@ h3 {
   text-decoration: none; /* Säkerställ att understrykning inte visas vid hover */
 }
 
-
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 
 @media only screen and (max-width: 413px) {
   .container {

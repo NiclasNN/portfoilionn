@@ -63,6 +63,7 @@ function Navbar({ language, setLanguage }) {
                 </div>
                 <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
                     <a href="#home">{text.home}</a>
+                    <a href="#services">Service</a>
                     <a href="#about">{text.about}</a>
                     <a href="#projects">{text.projects}</a>
                     <a href="mailto:niclasnorman1@hotmail.se">{text.contact}</a>

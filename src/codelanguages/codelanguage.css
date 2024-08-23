@@ -54,3 +54,10 @@ h2 {
 
 
 }
+
+
+@media (max-width: 768px) {
+  .frontendandbackend {
+    display: none; /* Döljer sektionen på mobilskärmar */
+  }
+}

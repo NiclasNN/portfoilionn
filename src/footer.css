@@ -1,29 +1,34 @@
 .footer-container {
   background-color: #c0d6ed;
-  padding: 26px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #0a2d54;
   width: 100%;
-  height: 80%; 
-  
+  height: 74%;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 1200px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1000px;
   flex-wrap: wrap;
-  padding: 0 20px; /* Lägg till padding om det behövs för inre utrymme */
+  padding: 0 10px;
+  margin-left: 5%;
 }
 
 .footer-section {
   flex: 1;
   min-width: 200px;
+  max-width: 300px;
   margin: 10px;
+}
+
+.footer-section:nth-child(2) {
+  margin-left: 100px; /* Flyttar "Navigera"-sektionen mer till höger */
 }
 
 .footer-section h3 {
@@ -39,13 +44,10 @@
 }
 
 .footer-section ul {
- 
-    list-style: none;
-    padding: 0;
-    text-decoration: underline;
- }
-
-
+  list-style: none;
+  padding: 0;
+  text-decoration: underline;
+}
 
 .footer-section ul li {
   margin-bottom: 10px;
@@ -64,11 +66,14 @@
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
-  width: 100%; /* Täcker hela sidans bredd */
-  padding: 0 20px; /* Padding på sidorna */
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.footer-bottom p {
-  margin: 0;
-  font-size: 0.9rem;
+@media (max-width: 768px) {
+  .footer-section:nth-child(2) {
+    margin-left: 0; /* Tar bort marginalen för mobila enheter */
+  }
 }

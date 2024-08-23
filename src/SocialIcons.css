@@ -1,24 +1,86 @@
-/* Justering av sociala ikoner */
 .social-icons {
-  position: fixed;
-  bottom: 10px; /* Placera nära botten */
-  left: 10px; /* Placera nära vänsterkanten */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1000;
+    /* flex-direction: column; */
+    align-items: center;
+    position: fixed;
+    left: -26px;
+    top: 93%;
+    flex-flow: column-reverse;
+    /* background-color: darkblue; */
+    transform: translateY(-50%);
 }
 
 .social-icons a {
-  margin: 5px 0; /* Mindre avstånd mellan ikonerna */
+  margin: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border: 2px solid #083666;
+    border-radius: 50%;
+    background-color: #145ccd; /* Bakgrundsfärg på ikonerna */
 }
 
-.social-icons img {
-  width: 20px; /* Minska ikonerna till 20px */
-  height: 20px;
-  transition: transform 0.2s ease;
+.social-icons a img {
+  width: 60%; /* Justera storlek på ikonerna inom cirkeln */
+  height: auto;
 }
 
-.social-icons img:hover {
-  transform: scale(1.05); /* Liten förstoring vid hover */
+.social-icons:before {
+  content: '';
+    display: block;
+    width: 2px;
+    height: 264px;
+    background-color: #001f3f;
+    position: relative;
+    top: -6px;
+}
+
+
+.social-icons p{
+
+  visibility:hidden
+
+}
+
+@media (max-width: 1040px) {
+  .social-icons {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* Anpassa för en bredare skärm om du vill täcka större enheter */
+  .social-icons {
+    display: none;
+    visibility: hidden;
+  }
+
+  .social-icons a {
+    display: none;
+    visibility: hidden;
+  }
+
+  .social-icons:before {
+    display: none;
+    visibility: hidden;
+  }
+
+  .social-icons a img {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.social-icons a:hover {
+  background-color: #083666; /* Ändrar bakgrundsfärgen vid hovring */
+  transform: scale(1.1); /* Gör ikonerna lite större vid hovring */
+  transition: transform 0.3s, background-color 0.3s; /* Lägger till en mjuk övergång */
+}
+
+.social-icons a img:hover {
+  filter: brightness(1.2); /* Gör ikonen ljusare vid hovring */
+  transition: filter 0.3s; /* Lägger till en mjuk övergång */
 }

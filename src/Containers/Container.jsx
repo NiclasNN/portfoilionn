@@ -1,11 +1,17 @@
-import React from 'react';
-import './container.css';              // Importera CSS för Container-komponenten
-import About from '../aboutme/About';  // Importera About-komponenten
-import Projects from '../myprojects/Projects';  // Importera Projects-komponenten
-import Codelanguage from '../codelanguages/Codelanguage';  // Importera Codelanguage-komponenten
-import Footer from "../Footer.jsx";    // Importera Footer-komponenten
+import React, { useEffect } from 'react';
+import './container.css'; // Importera CSS för Container-komponenten
+import About from '../aboutme/About'; // Importera About-komponenten
+import Projects from '../myprojects/Projects'; // Importera Projects-komponenten
+import Codelanguage from '../codelanguages/Codelanguage'; // Importera Codelanguage-komponenten
+import Footer from "../Footer.jsx"; // Importera Footer-komponenten
+import SocialIcons from "../SocialIcons"; // Importera SocialIcons-komponenten
 
 const Container = ({ children, language }) => {
+  useEffect(() => {
+    const element = document.getElementById('boxen2');
+    element.classList.add('slide-in');
+  }, []);
+
   return (
     <div className="container">
       <div className="boxes">
@@ -18,6 +24,7 @@ const Container = ({ children, language }) => {
           {children}
         </div>
       </div>
+      <SocialIcons /> {/* Lägg till SocialIcons-komponenten här */}
       <About language={language} />
       <Codelanguage language={language} />
       <Projects language={language} />
@@ -26,7 +33,8 @@ const Container = ({ children, language }) => {
           <h3>{language === 'sv' ? 'Kontakta mig' : 'Contact me'}</h3>
         </a>
       </div>
-      <Footer language={language} />  {/* Skicka language-prop till Footer */}
+      <Footer language={language} /> {/* Skicka language-prop till Footer */}
+     
     </div>
   );
 };
