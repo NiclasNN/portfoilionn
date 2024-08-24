@@ -49,7 +49,7 @@ function Navbar({ language, setLanguage }) {
     // Text baserad på det valda språket
     const text = {
         home: language === 'sv' ? 'Hem' : 'Home',
-        about: language === 'sv' ? 'Om mig' : 'About',
+        about: language === 'sv' ? ' Om mig' : 'About',
         projects: language === 'sv' ? 'Projekt' : 'Projects',
         contact: language === 'sv' ? 'Kontakt' : 'Contact',
         downloadCv: language === 'sv' ? 'CV' : 'Resume',

@@ -179,4 +179,74 @@
 
 
 /* navbar.css */
+@media (max-width: 1223px){
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    background-color: rgba(77, 128, 228, 0.95);
+    position: fixed; /* Fixerad position för att menyn inte ska röra sig vid scroll */
+    top: 60px;
+    left: 0;
+    padding: 1rem 0;
+    z-index: 9; /* Justera z-index om menyn täcker andra element */
+  }
 
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-links a {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-toggle {
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .navbar-toggle div {
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px;
+  }
+
+  .navbar-brand a {
+    color: #d3d3d3;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-flag {
+    width: 32px;
+    height: 32px;
+    margin-left: 0; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+}
+
+
+
+@media (max-width: 1394px) and (min-width: 1223px) {
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 7rem;
+
+
+
+}
+.navbar-brand a {
+
+margin-left: -102px;
+    margin-right: 30px;
+}
+}
