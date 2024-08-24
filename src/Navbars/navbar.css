@@ -6,7 +6,6 @@
   top: 0;
   z-index: 10;
   padding: 1rem 0;
-  
 }
 
 .navbar {
@@ -18,7 +17,6 @@
   width: 80%;
   margin: 0 auto;
   border-radius: 5px;
-  
 }
 
 .navbar-brand a {
@@ -31,7 +29,7 @@
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem; /* Minskat gap från 4rem till 2rem */
   margin-left: auto;
 }
 
@@ -39,21 +37,42 @@
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: background 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden; /* För att dölja ramlösningen tills den är synlig */
 }
 
-.navbar-links a:hover {
-  background: rgba(9, 232, 68, 0.2);
-  transform: scale(1.05);
+.navbar-links a::before,
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: #fff;
+  transition: width 0.3s ease;
 }
+
+.navbar-links a::before {
+  bottom: 0;
+  left: 0;
+}
+
+.navbar-links a::after {
+  top: 0;
+  right: 0;
+}
+
+.navbar-links a:hover::before,
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+
+
+
 
 .navbar-flag {
-  width: 32px; /* Justera storlek på flaggan */
-  height: 32px;
+  width: 32px; /* Minskad bredd från 32px till 24px */
+  height: 32px; /* Minskad höjd från 32px till 24px */
   margin-left: 1rem;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -67,7 +86,7 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) { /* Tidigare aktivering av media query */
   .navbar-links {
     display: none;
     flex-direction: column;
@@ -111,20 +130,16 @@
   }
 
   .navbar-flag {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     margin-left: 0; 
     cursor: pointer;
     transition: transform 0.3s ease;
-
+  }
 }
-}
-
 
 /* Media Query for iPad Devices (min-width: 768px and max-width: 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
-
-  /* Justera navbarens layout */
   .navbar-links {
     display: none;
     flex-direction: column;
@@ -168,18 +183,15 @@
   }
 
   .navbar-flag {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     margin-left: 0; 
     cursor: pointer;
     transition: transform 0.3s ease;
-
+  }
 }
-}
 
-
-/* navbar.css */
-@media (max-width: 1223px){
+@media (max-width: 1223px) {
   .navbar-links {
     display: none;
     flex-direction: column;
@@ -223,30 +235,11 @@
   }
 
   .navbar-flag {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     margin-left: 0; 
     cursor: pointer;
     transition: transform 0.3s ease;
-
+  }
 }
-}
 
-
-
-@media (max-width: 1394px) and (min-width: 1223px) {
-
-  .navbar {
-    display: flex;
-    align-items: center;
-    padding: 1rem 7rem;
-
-
-
-}
-.navbar-brand a {
-
-margin-left: -102px;
-    margin-right: 30px;
-}
-}

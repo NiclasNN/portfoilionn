@@ -14,17 +14,18 @@ function Navbar({ language, setLanguage }) {
             event.preventDefault(); // Hindrar webbläsaren från att följa länken för vanliga länkar
 
             let targetSection = null;
-
-            if (href === '#home') {
-                targetSection = document.querySelector('.container');
-            } else if (href === '#about') {
-                targetSection = document.querySelector('.hej-box');
-            } else if (href === '#projects') {
-                targetSection = document.getElementById('projects');
-            } else if (href.startsWith('#')) {
-                const targetId = href.replace('#', '');
-                targetSection = document.getElementById(targetId);
-            }
+    if (href === '#home') {
+            targetSection = document.querySelector('.container');
+        } else if (href === '#about') {
+            targetSection = document.querySelector('.hej-box');
+        } else if (href === '#niclasnorman') {
+            targetSection = document.querySelector('.container'); // Korrekt selektor för #niclasnorman
+        } else if (href === '#projects') {
+            targetSection = document.getElementById('projects');
+        } else if (href.startsWith('#')) {
+            const targetId = href.replace('#', '');
+            targetSection = document.getElementById(targetId);
+        }
 
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
@@ -59,7 +60,7 @@ function Navbar({ language, setLanguage }) {
         <div className="navbar-container">
             <nav className="navbar">
                 <div className="navbar-brand">
-                    <a href="#home">Niclas Norman</a>
+                    <a href="#niclasnorman">Niclas Norman</a>
                 </div>
                 <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
                     <a href="#home">{text.home}</a>
