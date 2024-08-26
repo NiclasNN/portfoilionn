@@ -5,8 +5,8 @@ function Footer({ language }) {
     const text = {
         developerName: language === 'sv' ? 'Niclas Norman' : 'Niclas Norman',
         description: language === 'sv' 
-            ? 'Webbutvecklare med erfarenhet inom både front-end och back-end. Starka färdigheter inom design och kodning för att hantera olika projekt och utmaningar.'
-            : 'Web developer with experience in both front-end and back-end. Strong skills in design and coding to handle various projects and challenges.',
+            ? 'Jag är en nyutexaminerad webbutvecklare från TechOver Academy med kunskaper inom front-end och back-end. Min erfarenhet av olika teknologier gör mig redo för varierande projekt och utmaningar.'
+            : 'I am a recent graduate from TechOver Academy with knowledge in front-end and back-end development. My experience with various technologies prepares me for diverse projects and challenges.',
         navigate: language === 'sv' ? 'Navigera' : 'Navigate',
         home: language === 'sv' ? 'Hem' : 'Home',
         about: language === 'sv' ? 'Om Mig' : 'About Me',
@@ -65,8 +65,8 @@ function Footer({ language }) {
                 </div>
                 <div className="footer-section">
                     <h3>{text.contact}</h3>
-                    <p>niclasnorman1@hotmail.se</p>
-                    <p>+46 70 7752120</p>
+                    <p><a href="mailto:niclasnorman1@hotmail.se">niclasnorman1@hotmail.se</a></p>
+                    <p><a href="tel:+46707752120">+46 70 7752120</a></p>
                     <p>{text.city}</p>
                 </div>
             </div>
