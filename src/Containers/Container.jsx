@@ -5,6 +5,7 @@ import Projects from '../myprojects/Projects'; // Importera Projects-komponenten
 import Codelanguage from '../codelanguages/Codelanguage'; // Importera Codelanguage-komponenten
 import Footer from "../Footer.jsx"; // Importera Footer-komponenten
 import SocialIcons from "../SocialIcons"; // Importera SocialIcons-komponenten
+import Service from '../service/'; // Importera Service-komponenten
 
 const Container = ({ children, language }) => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const Container = ({ children, language }) => {
       </div>
       <SocialIcons /> {/* Lägg till SocialIcons-komponenten här */}
       <About language={language} />
+      <Service language={language} /> {/* Lägg till Service-komponenten här */}
       <Codelanguage language={language} />
       <Projects language={language} />
       <div id="contactme">
@@ -34,7 +36,6 @@ const Container = ({ children, language }) => {
         </a>
       </div>
       <Footer language={language} /> {/* Skicka language-prop till Footer */}
-     
     </div>
   );
 };
