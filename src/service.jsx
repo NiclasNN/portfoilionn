@@ -6,8 +6,11 @@ import './service.css';
 const Service = ({ language }) => {
   return (
     <section className="service-section">
-      <div className="service-content">
-        <div className="service-text">
+      <div className="service-container">
+      <div className="image-column">
+          <Lottie animationData={animationData} loop={true} className="animated-image" />
+        </div>
+        <div className="text-column">
           <h2>{language === 'sv' ? 'Specialerbjudande' : 'Special Offer'}</h2>
           <p className="service-description">
             {language === 'sv'
@@ -28,9 +31,7 @@ const Service = ({ language }) => {
             {language === 'sv' ? 'Kontakta mig' : 'Contact Me'}
           </a>
         </div>
-        <div className="service-image">
-          <Lottie animationData={animationData} loop={true} className="animated-image" />
-        </div>
+        
       </div>
     </section>
   );

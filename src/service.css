@@ -1,103 +1,96 @@
 /* General section styling */
-.service-section {
+.service-container {
+  border-radius: 13.5px; /* Minskad med 10% */
+
+  display: flex;
+  flex-direction: column;
+  max-width: 720px; /* Minskad med 10% */
+  width: 65.7%; /* Minskad med 10% */
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 36px; /* Minskad med 10% */
+  align-items: center;
+}
+
+.image-column {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.9);
-  margin-top: 300px; /* Vit transparent bakgrund */
+  margin-bottom: 18px; /* Minskad med 10% */
 }
 
-
-/* Container for the service content */
-.service-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Vit bakgrund */
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  padding: 40px;
-  max-width: 800px; /* Max-bredden justerad för att vara balanserad */
-  width: 100%;
+.animated-image {
+  max-width: 90%; /* Minskad med 10% */
+  height: auto;
 }
 
-/* Styling for the text content */
-.service-text {
-  flex: 1;
-  max-width: 50%;
-  margin-right: 20px;
+.text-column {
+  background: #fff;
+  text-align: center;
+  color: #082d59ff;
+  margin-top: -39.6px; /* Minskad med 10% */
+  border-radius: 55.8px; /* Minskad med 10% */
+  padding: 17.1px; /* Minskad med 10% */
+  width: 56.7%; /* Minskad med 10% */
 }
 
-.service-text h2 {
-  font-size: 2.2rem; /* Justera storleken */
+.text-column h2 {
+  font-size: 1.8rem; /* Minskad med 10% */
   font-weight: 700;
-  color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 13.5px; /* Minskad med 10% */
+  color: #082d59;
 }
 
 .service-description {
-  font-size: 1.2rem; /* Justera storleken */
-  color: #555;
-  margin-bottom: 20px;
+  font-size: 1.08rem; /* Minskad med 10% */
+  margin-bottom: 13.5px; /* Minskad med 10% */
+  color: #082d59;
 }
 
 .price-container {
   display: flex;
+  justify-content: center;
   align-items: baseline;
-  margin-bottom: 20px;
+  margin-bottom: 13.5px; /* Minskad med 10% */
 }
 
 .old-price {
-  font-size: 1.4rem; /* Justera storleken */
+  font-size: 1.26rem; /* Minskad med 10% */
   text-decoration: line-through;
-  color: #999;
-  margin-right: 10px;
+  color: #ddd;
+  margin-right: 9px; /* Minskad med 10% */
+  color: #082d59;
 }
 
 .new-price {
-  font-size: 2rem; /* Justera storleken */
+  font-size: 1.8rem; /* Minskad med 10% */
   font-weight: 700;
-  color: #e63946;
-  margin-right: 10px;
+  color: #082d59;
 }
 
 .price-unit {
-  font-size: 1.2rem; /* Justera storleken */
-  color: #333;
+  font-size: 1.08rem; /* Minskad med 10% */
+  color: #082d59;
 }
 
 .limited-time {
-  font-size: 1.2rem; /* Justera storleken */
-  color: #555;
-  margin-bottom: 20px;
+  font-size: 0.9rem; /* Minskad med 10% */
+  margin-bottom: 18px; /* Minskad med 10% */
 }
 
 .contact-button {
   display: inline-block;
-  background-color: #007bff;
+  background-color: #0056b3;
   color: #ffffff;
-  padding: 10px 20px; /* Justera storleken */
-  font-size: 1rem; /* Justera storleken */
+  padding: 9px 18px; /* Minskad med 10% */
+  font-size: 0.9rem; /* Minskad med 10% */
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: 5.4px; /* Minskad med 10% */
   text-decoration: none;
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .contact-button:hover {
-  background-color: #0056b3;
+  background-color: #003f8a;
   transform: scale(1.05);
-}
-
-/* Styling for the animation */
-.service-image {
-  flex: 1;
-  max-width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.animated-image {
-  max-width: 100%; /* Större bredd för att undvika att bilden blir för liten */
-  height: auto;
 }
