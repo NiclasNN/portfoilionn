@@ -21,14 +21,14 @@
 /* Grid layout for project cards with spacing between items */
 .project-grid {
   display: grid; /* Minska avståndet mellan korten */
-  max-width: 1175px;
+  max-width: 1245px;
   margin: 0 auto;
 }
 
 /* Basic styling for each project card with a light blue background */
 .project-card {
   display: flex;
-  background-color: rgba(59, 130, 246, 0.2); /* Ljusblå, transparent bakgrundsfärg hela tiden */
+  background-color:  rgb(219 226 239); /* Ljusblå, transparent bakgrundsfärg hela tiden */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); /* Ljusblå skugga för att matcha bakgrunden */
@@ -49,14 +49,17 @@
 }
 
 .project-content h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 10px;
-  color: #1f2937;
+  color: #082d59;
+  ;
 }
 
 .project-content p {
   margin-bottom: 15px;
-  color: #000001;
+  color: #082d59;
+  font-weight: bold;
+
   line-height: 1.6;
    font-family: 'Roboto', sans-serif;
    
@@ -64,7 +67,8 @@
 
 .tech-stack {
   font-weight: bold;
-  color: #1f2937;
+  color: #082d59;
+
 }
 
 .buttons {

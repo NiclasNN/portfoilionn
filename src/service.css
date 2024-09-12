@@ -1,91 +1,132 @@
-/* General section styling */
-.service-container {
-  border-radius: 13.5px; /* Minskad med 10% */
+.service-section {
+  display: flex;
+  flex-wrap: nowrap; /* Tvingar sektionerna att stanna på samma rad */
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 36px; /* Minskad med 10% från 40px */
+   /* Minskad med 10% från 20px */
+  margin-top: 48px;
+  transform: translateY(50px);
+  transition: opacity 1s ease-in, transform 1s ease-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.service-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  
+  
+}
 
+
+.service-container,
+#frontendandbackend {
+  flex: 0 1 calc(50% - 9px); /* Minskad med 10% från 10px */
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 22.5px; /* Minskad med 10% från 25px */
+  padding: 18px; /* Minskad med 10% från 20px */
+  box-shadow: 0 7.2px 27px rgba(0, 0, 0, 0.12); /* Minskad med 10% från 8px 30px */
+  margin-bottom: 18px; /* Minskad med 10% från 20px */
+  height: 554px; /* Minskad med 10% från 560px */
+  width: 450px; /* Minskad med 10% från 500px */
+  transform: translateY(50px);
+  transition: opacity 1s ease-in, transform 1s ease-out;
+}
+.service-container,
+#frontendandbackend.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+@media (max-width: 1024px) {
+  .service-section {
+    flex-wrap: wrap; /* Tillåter radbrytning vid mindre skärmar */
+  }
+
+  .service-container,
+  .frontendandbackend {
+    flex: 0 1 100%; /* Tar upp hela bredden vid mindre skärmar */
+    margin-bottom: 18px; /* Minskad med 10% från 20px */
+  }
+}
+
+.icon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Minskad med 10% från 100px */
+  gap: 18px; /* Minskad med 10% från 20px */
+  justify-items: center;
+}
+
+.icon {
   display: flex;
   flex-direction: column;
-  max-width: 720px; /* Minskad med 10% */
-  width: 65.7%; /* Minskad med 10% */
-  overflow: hidden;
-  margin: 0 auto;
-  padding: 36px; /* Minskad med 10% */
   align-items: center;
+  transition: transform 0.4s ease;
 }
 
-.image-column {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 18px; /* Minskad med 10% */
+.icon img {
+  width: 63px; /* Minskad med 10% från 70px */
+  height: 63px; /* Minskad med 10% från 70px */
+  margin-bottom: 10.8px; /* Minskad med 10% från 12px */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.animated-image {
-  max-width: 90%; /* Minskad med 10% */
-  height: auto;
+.icon p {
+  font-size: 0.99rem; /* Minskad med 10% från 1.1rem */
+  color: #555;
 }
 
-.text-column {
-  background: #fff;
-  text-align: center;
-  color: #082d59ff;
-  margin-top: -39.6px; /* Minskad med 10% */
-  border-radius: 55.8px; /* Minskad med 10% */
-  padding: 17.1px; /* Minskad med 10% */
-  width: 56.7%; /* Minskad med 10% */
+.icon:hover img {
+  transform: scale(1.2) rotate(-5deg);
+  box-shadow: 0 4.5px 13.5px rgba(0, 0, 0, 0.2); /* Minskad med 10% från 5px 15px */
 }
 
 .text-column h2 {
-  font-size: 1.8rem; /* Minskad med 10% */
+  font-size: 1.62rem; /* Minskad med 10% från 1.8rem */
   font-weight: 700;
-  margin-bottom: 13.5px; /* Minskad med 10% */
+  margin-bottom: 12.15px; /* Minskad med 10% från 13.5px */
   color: #082d59;
 }
 
 .service-description {
-  font-size: 1.08rem; /* Minskad med 10% */
-  margin-bottom: 13.5px; /* Minskad med 10% */
+  font-size: 0.97rem; /* Minskad med 10% från 1.08rem */
+  margin-bottom: 12.15px; /* Minskad med 10% från 13.5px */
   color: #082d59;
 }
 
-.price-container {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  margin-bottom: 13.5px; /* Minskad med 10% */
-}
-
 .old-price {
-  font-size: 1.26rem; /* Minskad med 10% */
+  font-size: 1.13rem; /* Minskad med 10% från 1.26rem */
   text-decoration: line-through;
   color: #ddd;
-  margin-right: 9px; /* Minskad med 10% */
+  margin-right: 8.1px; /* Minskad med 10% från 9px */
   color: #082d59;
 }
 
 .new-price {
-  font-size: 1.8rem; /* Minskad med 10% */
+  font-size: 1.62rem; /* Minskad med 10% från 1.8rem */
   font-weight: 700;
   color: #082d59;
 }
 
 .price-unit {
-  font-size: 1.08rem; /* Minskad med 10% */
+  font-size: 0.97rem; /* Minskad med 10% från 1.08rem */
   color: #082d59;
 }
 
 .limited-time {
-  font-size: 0.9rem; /* Minskad med 10% */
-  margin-bottom: 18px; /* Minskad med 10% */
+  font-size: 0.81rem; /* Minskad med 10% från 0.9rem */
+  margin-bottom: 16.2px; /* Minskad med 10% från 18px */
 }
 
 .contact-button {
   display: inline-block;
   background-color: #0056b3;
   color: #ffffff;
-  padding: 9px 18px; /* Minskad med 10% */
-  font-size: 0.9rem; /* Minskad med 10% */
+  padding: 7.1px 16.2px; /* Minskad med 10% från 9px 18px */
+  font-size: 0.81rem; /* Minskad med 10% från 0.9rem */
   font-weight: 600;
-  border-radius: 5.4px; /* Minskad med 10% */
+  border-radius: 3.86px; /* Minskad med 10% från 5.4px */
   text-decoration: none;
   transition: background-color 0.3s, transform 0.3s;
 }

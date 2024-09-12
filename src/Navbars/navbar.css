@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(77, 128, 228, 0.8);
+  background-color:#517fb6;
   color: #fff;
   width: 80%;
   margin: 0 auto;
@@ -146,7 +146,7 @@
     align-items: center;
     gap: 1rem;
     width: 100%;
-    background-color: rgba(77, 128, 228, 0.95);
+    background-color: linear-gradient(135deg, #3F72AF 0%, #112D4E 100%);
     position: fixed; /* Fixerad position för att menyn inte ska röra sig vid scroll */
     top: 60px;
     left: 0;
@@ -198,7 +198,7 @@
     align-items: center;
     gap: 1rem;
     width: 100%;
-    background-color: rgba(77, 128, 228, 0.95);
+    background: linear-gradient(135deg, #3F72AF 0%, #112D4E 100%);
     position: fixed; /* Fixerad position för att menyn inte ska röra sig vid scroll */
     top: 60px;
     left: 0;
