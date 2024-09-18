@@ -5,40 +5,35 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 3rem;
-  background-image: url('path-to-your-background-image.jpg');
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  margin-top: 300px;
-  opacity: 0; /* Starta som osynlig */
-  transform: translateY(50px); /* Starta med att vara lite utanför vyn */
+  
+  opacity: 0;
+  transform: translateY(50px);
   transition: opacity 1s ease, transform 1s ease;
-  position: relative; /* För att kunna placera dekorativa element */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Skugga för djup */
+  position: relative;
 }
 
 .about-container.visible {
   opacity: 1;
-  transform: translateY(0); /* Flytta till sin ursprungliga position */
+  transform: translateY(0);
 }
 
 .about-content {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  gap: 2rem; /* Lägger till mer utrymme mellan text och bild */
+  ;  /* Minska gap för att flytta text och bild närmare */
 }
 
 .about-text {
   flex: 1;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
+ 
   border-radius: 10px;
   opacity: 0;
   transform: translateX(-50px);
   transition: opacity 1.2s ease, transform 1.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Skugga för djup */
-  position: relative;
 }
 
 .about-container.visible .about-text {
@@ -51,7 +46,6 @@
   line-height: 1.7;
   color: #073763;
   font-weight: 400;
-  width: 359px;
 }
 
 .about-title {
@@ -61,21 +55,16 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   position: relative;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #073763; /* Lägg till linje under rubriken */
 }
 
 .about-image-container {
   flex: 1;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
-  border-radius: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
   opacity: 0;
   transform: translateX(50px);
   transition: opacity 1.2s ease, transform 1.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Skugga för djup */
 }
 
 .about-container.visible .about-image-container {
@@ -83,72 +72,19 @@
   transform: translateX(0);
 }
 
-.about-image {
-  width: 240px;
+.animated-image {
+  width: 450px;
   height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s ease; /* Lägg till hover-effekt på bilden */
+  margin-right: 130px;
 }
 
-.about-image:hover {
-  transform: scale(1.05); /* Liten zoom på bilden vid hover */
-}
-
-/* Dekorativ linje till vänster om texten */
-.about-text::before {
-  content: '';
-  position: absolute;
-  left: -10px;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background-color: #073763;
-  transition: width 0.3s ease;
-}
-
-.about-container.visible .about-text::before {
-  width: 5px; /* Synlig linje när sektionen är synlig */
-}
-
-/* CTA-knapp under texten */
-.cta-button {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #073763;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #3a87ad;
-  transform: translateY(-3px); /* Liten lyft vid hover */
-}
-
-/* Responsiv design för mindre skärmar */
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
     text-align: center;
   }
 
-  .about-image {
+  .animated-image {
     width: 80%;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-title {
-    font-size: 2.4rem;
-  }
-
-  .about-text p {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    font-size: 0.9rem;
   }
 }

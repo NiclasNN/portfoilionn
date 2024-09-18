@@ -6,12 +6,34 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.8); /* Behåller din bakgrund */
+  background: rgba(255, 255, 255, 0.9); /* Behåller din bakgrund */
   width: 100%; /* Gör behållaren 80% av bredden */
   margin: 0 auto; /* Centrera behållaren */
   padding: 0; /* Ingen extra padding */
  /* Behåller rundade hörn om det finns */
 }
+
+.shadow-box {
+  margin: 40px auto;
+  padding: 20px;  /* Lägg till inre marginal för att få plats med innehållet */
+  
+  position: relative;  /* Gör att :before kan placeras korrekt */
+  max-width: 1200px;
+  left: 100px; /* Begränsar bredden för stora skärmar */
+    /* Vit bakgrund för kontrast */
+}
+
+.shadow-box:before {
+  content: '';
+  position: absolute;  /* Placera linjen utanför boxens innehåll */
+  left: 1px;  /* Placera linjen på vänstra sidan */
+  top: 0;
+  bottom: 0;
+  width: 5px;  /* Bredden på den mörkblå linjen */
+ 
+}
+
+
 
 
 

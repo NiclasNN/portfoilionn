@@ -1,137 +1,135 @@
+/* Placera "Teknologier och ramverk" överst */
 .service-section {
   display: flex;
-  flex-wrap: nowrap; /* Tvingar sektionerna att stanna på samma rad */
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 36px; /* Minskad med 10% från 40px */
-   /* Minskad med 10% från 20px */
-  margin-top: 48px;
-  transform: translateY(50px);
-  transition: opacity 1s ease-in, transform 1s ease-out;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-.service-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-  
-  
+  flex-direction: column; /* Ändra layout till kolumn */
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0;
+  background: none; 
+  border-radius: 0;
+  box-shadow: none;
+  color: #073763;
 }
 
-
-.service-container,
-#frontendandbackend {
-  flex: 0 1 calc(50% - 9px); /* Minskad med 10% från 10px */
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 22.5px; /* Minskad med 10% från 25px */
-  padding: 18px; /* Minskad med 10% från 20px */
-  box-shadow: 0 7.2px 27px rgba(0, 0, 0, 0.12); /* Minskad med 10% från 8px 30px */
-  margin-bottom: 18px; /* Minskad med 10% från 20px */
-  height: 554px; /* Minskad med 10% från 560px */
-  width: 450px; /* Minskad med 10% från 500px */
-  transform: translateY(50px);
-  transition: opacity 1s ease-in, transform 1s ease-out;
-}
-.service-container,
-#frontendandbackend.visible {
-  opacity: 1;
-  transform: translateY(0);
+.frameworks-section h2 {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%; /* Ser till att texten tar upp hela bredden för att centreras korrekt */
+  font-size: 2rem;
+  font-weight: 700;
+  color: #073763;
+  margin-bottom: 20px;
 }
 
-
-
-@media (max-width: 1024px) {
-  .service-section {
-    flex-wrap: wrap; /* Tillåter radbrytning vid mindre skärmar */
-  }
-
-  .service-container,
-  .frontendandbackend {
-    flex: 0 1 100%; /* Tar upp hela bredden vid mindre skärmar */
-    margin-bottom: 18px; /* Minskad med 10% från 20px */
-  }
+.frameworks-section {
+  transform: translateX(-10%); /* Flyttar sektionen 10% till vänster */
+  width: 100%; /* Ser till att hela sektionen tar upp full bredd */
 }
 
+/* Flytta teknologierna överst */
 .icon-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Minskad med 10% från 100px */
-  gap: 18px; /* Minskad med 10% från 20px */
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: 30px; /* Placera denna del överst */
 }
 
 .icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.4s ease;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  width: 60px;
+  height: 60px;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  background-color: #e6eff5;
 }
 
 .icon img {
-  width: 63px; /* Minskad med 10% från 70px */
-  height: 63px; /* Minskad med 10% från 70px */
-  margin-bottom: 10.8px; /* Minskad med 10% från 12px */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 40px;
+  height: 40px;
 }
 
 .icon p {
-  font-size: 0.99rem; /* Minskad med 10% från 1.1rem */
-  color: #555;
+  font-size: 0.75rem;
+  color: #003f8a;
+  font-weight: 600;
+  text-align: center;
 }
 
-.icon:hover img {
-  transform: scale(1.2) rotate(-5deg);
-  box-shadow: 0 4.5px 13.5px rgba(0, 0, 0, 0.2); /* Minskad med 10% från 5px 15px */
+/* Minska storleken på bilden ovanför "Specialerbjudande" */
+#animated-image {
+  max-width: 40%;
+  height: auto;
+  animation: floating 6s ease-in-out infinite;
+  margin-bottom: 30px; /* Justerar avståndet från texten */
+  position: relative; /* Ger möjlighet att flytta bilden */
+  top: 182px;
+  left: 54px; /* Flyttar bilden nedåt */
 }
 
-.text-column h2 {
-  font-size: 1.62rem; /* Minskad med 10% från 1.8rem */
-  font-weight: 700;
-  margin-bottom: 12.15px; /* Minskad med 10% från 13.5px */
-  color: #082d59;
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.service-description {
-  font-size: 0.97rem; /* Minskad med 10% från 1.08rem */
-  margin-bottom: 12.15px; /* Minskad med 10% från 13.5px */
-  color: #082d59;
-}
-
-.old-price {
-  font-size: 1.13rem; /* Minskad med 10% från 1.26rem */
-  text-decoration: line-through;
-  color: #ddd;
-  margin-right: 8.1px; /* Minskad med 10% från 9px */
-  color: #082d59;
-}
-
-.new-price {
-  font-size: 1.62rem; /* Minskad med 10% från 1.8rem */
-  font-weight: 700;
-  color: #082d59;
-}
-
-.price-unit {
-  font-size: 0.97rem; /* Minskad med 10% från 1.08rem */
-  color: #082d59;
-}
-
-.limited-time {
-  font-size: 0.81rem; /* Minskad med 10% från 0.9rem */
-  margin-bottom: 16.2px; /* Minskad med 10% från 18px */
-}
-
+/* CTA-knapp */
 .contact-button {
   display: inline-block;
-  background-color: #0056b3;
+  background-color: #003f8a;
   color: #ffffff;
-  padding: 7.1px 16.2px; /* Minskad med 10% från 9px 18px */
-  font-size: 0.81rem; /* Minskad med 10% från 0.9rem */
+  padding: 10px 20px;
+  font-size: 1.2rem;
   font-weight: 600;
-  border-radius: 3.86px; /* Minskad med 10% från 5.4px */
+  border-radius: 30px;
   text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-button:hover {
-  background-color: #003f8a;
+  background-color: #002c66;
   transform: scale(1.05);
+}
+
+/* Justering för mindre skärmar */
+@media (max-width: 768px) {
+  .icon-container {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon p {
+    font-size: 0.65rem;
+  }
+
+  #animated-image {
+    max-width: 60%; /* Minska storleken ytterligare på små skärmar */
+  }
 }

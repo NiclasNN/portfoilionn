@@ -55,17 +55,23 @@ const Container = ({ children, language }) => {
           {children}
         </div>
       </div>
-      <SocialIcons />
-      <About language={language} />
-      <div className="service-section">
-        <Service language={language} />
+
+      {/* Omslutande div med skugga runt SocialIcons, About, Service och Projects */}
+      <div className="shadow-box">
+        <SocialIcons />
+        <About language={language} />
+        <div className="service-section">
+          <Service language={language} />
+        </div>
+        <Projects language={language} />
       </div>
-      <Projects language={language} />
+
       <div id="contactme">
         <a href="mailto:niclasnorman1@hotmail.se">
           <h3>{language === 'sv' ? 'Kontakta mig' : 'Contact me'}</h3>
         </a>
       </div>
+
       <Footer language={language} />
     </div>
   );
