@@ -19,6 +19,16 @@
   padding: 0 10px;
   margin-left: 5%;
 }
+.footer-container a {
+  text-decoration: none; /* Tar bort understrykningen */
+  color: inherit; /* Gör att länken ärver färgen från sin förälder */
+}
+
+.footer-container a:hover {
+  text-decoration: none; /* Säkerställer att det inte uppstår understrykning vid hover */
+  color: #0a2d54; /* Du kan anpassa färgen vid hover om du vill */
+}
+
 
 .footer-section {
   flex: 1;

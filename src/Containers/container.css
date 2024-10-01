@@ -1,111 +1,99 @@
+/* Konfigurerar behållaren */
 .container {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.9); /* Behåller din bakgrund */
-  width: 100%; /* Gör behållaren 80% av bredden */
-  margin: 0 auto; /* Centrera behållaren */
-  padding: 0; /* Ingen extra padding */
- /* Behåller rundade hörn om det finns */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .shadow-box {
   margin: 40px auto;
-  padding: 20px;  /* Lägg till inre marginal för att få plats med innehållet */
-  
-  position: relative;  /* Gör att :before kan placeras korrekt */
+  padding: 20px;
+  position: relative;
   max-width: 1200px;
-  left: 100px; /* Begränsar bredden för stora skärmar */
-    /* Vit bakgrund för kontrast */
+  left: 100px;
 }
 
-.shadow-box:before {
+/* Animation för blob */
+.blob {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 48% 52% 68% 32% / 42% 28% 72% 58%;
+  background: #073763;
+  background-size: 500% 100%;
+  animation: 
+      blobber 12s linear infinite, /* Byt till linear för att få en jämn rörelse */
+      cobler 12s linear infinite alternate;
+  margin-left: -441px;
+  margin-top: 31%;
+  scale: 1.2;
+}
+
+.blob img {
+  width: auto;
+  height: 94%;
+  object-fit: cover;
+  position: absolute;
+  top: 10%;
+  left: 9%;
+}
+
+.blob:after {
   content: '';
-  position: absolute;  /* Placera linjen utanför boxens innehåll */
-  left: 1px;  /* Placera linjen på vänstra sidan */
-  top: 0;
-  bottom: 0;
-  width: 5px;  /* Bredden på den mörkblå linjen */
- 
-}
-
-
-
-
-
-@keyframes floatScale {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  25% {
-    transform: translate(-50%, -50%) scale(1.05);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  75% {
-    transform: translate(-50%, -50%) scale(0.95);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-.animated-bubble {
-  background: linear-gradient(135deg, #3F72AF 0%, #112D4E 100%);
+  display: block;
+  position: absolute;
+  top: 29px;
+  right: -10px;
+  bottom: -7px;
+  left: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   border-radius: 50%;
-  animation: floatScale 6s ease-in-out infinite;
+  animation:
+      blobber 1s linear infinite, /* Byt till linear här också */
+      wobbler 1s linear infinite alternate;
+}
+
+@keyframes blobber {
+  0%  { border-radius: 30% 70% 60% 40% / 30% 50% 50% 70%; }  /* Drastiskt annorlunda form */
+  10% { border-radius: 70% 30% 25% 75% / 50% 20% 80% 50%; }  /* Smalare och bredare */
+  20% { border-radius: 50% 50% 40% 60% / 40% 30% 70% 60%; }  /* Oval form */
+  30% { border-radius: 50% 60% 40% 80% / 60% 50% 50% 40%; }  /* Djupare böjningar */
+  40% { border-radius: 30% 70% 60% 40% / 30% 50% 50% 70%; }  /* Vänd om formen */  /* Tillbaka till ursprung */
+  60% { border-radius: 80% 20% 70% 30% / 50% 25% 75% 50%; }  /* Extrem stretchning */  /* Balans mellan ovaler */
+  80% { border-radius: 20% 80% 60% 40% / 70% 30% 50% 50%; }  /* Djup stretchning */
+  90% { border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }  /* Formvariation */
+  100%{ border-radius: 30% 70% 60% 40% / 30% 50% 50% 70%; }  /* Återgång till ursprung */
 }
 
 
-/* Animation för slide-in från vänster */
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+@keyframes cobler {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
 }
 
-/* Floating animation */
+@keyframes wobbler {
+  0%  { transform: rotateZ(19deg); }
+  100% { transform: rotateZ(-8deg); }
+}
+
+
+
 
 
 /* Slide-in class */
 .slide-in {
   animation: slideInFromLeft 1s ease-out forwards;
-}
-
-/* Profilbild med floating effekt */
-.my-image {
-  border-radius: 50%;
-  /* height: 300px; */
-  /* width: 300px; */
-  margin-bottom: 10px;
-  animation: float 3s ease-in-out infinite;
-  /* background: linear-gradient(135deg, #3F72AF 0%, #112D4E 100%); */
-  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); */
-  position: relative;
-  right: 430px;
-  top: 17px;
- 
-}
-
-
-
-/* Bilden inuti .my-image */
-.my-image img {
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  overflow: hidden;
 }
 
 /* Boxar under navigationsfältet */
@@ -158,25 +146,10 @@
   margin: 1px;
 }
 
-/* Länkar */
-a {
-  text-decoration: none;
-  color: black;
-}
-
-/* Små rubriker */
-h3 {
-  font-size: 2.5rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  color: #1a1a1a;
-  letter-spacing: 0.5px;
-  margin: 5px;
-}
-
 /* Kontaktknappen */
 #contactme {
-  text-decoration: none;
+  text-decoration: none; /* Ta bort understrykningen */
+  color: #ffffff; /* Ändra textfärgen till vit */
   padding: 10.56px 10.12px;
   background: #4a90e2;
   border-radius: 30px;
@@ -189,10 +162,13 @@ h3 {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  color: #ffffff;
 }
 
-/* Gradient effekt på knappen vid hover */
+#contactme a {
+  text-decoration: none !important; /* Försäkra dig om att understrykningen tas bort från alla länkar */
+  color: inherit; /* Se till att länken ärver färgen från knappen */
+}
+
 #contactme::before {
   content: "";
   position: absolute;
@@ -220,6 +196,8 @@ h3 {
   cursor: pointer;
 }
 
+
+
 /* Gradient move keyframes */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
@@ -228,50 +206,3 @@ h3 {
 }
 
 /* Media queries för mindre skärmar */
-@media only screen and (max-width: 413px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  .my-image {
-    height: 40vw;
-    width: 40vw;
-    margin: 24px auto;
-    position: static;
-    margin-left: 18%;
-  }
-
-  #boxen {
-    width: 225vw;
-    margin: -5px;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  #boxen2 {
-    width: 90vw;
-    margin: 64px auto;
-    padding: 10px;
-  }
-
-  #boxen2 h1 {
-    font-size: 2.5rem;
-    margin: 5px 0;
-  }
-
-  #boxen2 h2, h3 {
-    font-size: 2rem;
-    margin: 5px 0;
-  }
-
-  #contactme {
-    font-size: 12px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-  }
-}
-
-/* Fler media queries för andra skärmstorlekar kan läggas till efter behov */

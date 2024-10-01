@@ -1,13 +1,13 @@
 #projects h2{
-  margin-left: 41%;
+  margin-left: 35%;
 
 
 }/* Styles for the projects container */
 
 
 #projects {
-  padding: 36px;
-  margin-top: 156px;
+  padding: 5px;
+  margin-top: 1px;
   opacity: 0;
   transform: translateY(45px);
   transition: opacity 1s ease-in, transform 1s ease-in;
@@ -23,6 +23,7 @@
   display: grid; /* Minska avståndet mellan korten */
   max-width: 1245px;
   margin: 0 auto;
+  margin-left: -130px;
 }
 
 /* Basic styling for each project card with a light blue background */
@@ -35,6 +36,8 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform: scale(0.8); /* Anpassa storlek på korten */
   transform-origin: center;
+  padding:30px;
+  width: 1195px;
 }
 
 .project-card:hover {
@@ -45,7 +48,7 @@
 /* Content inside the project card */
 .project-content {
   flex: 1;
-  padding: 20px;
+  padding: 5px;
 }
 
 .project-content h3 {
