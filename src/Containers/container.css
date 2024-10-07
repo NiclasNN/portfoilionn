@@ -206,3 +206,113 @@
 }
 
 /* Media queries för mindre skärmar */
+
+
+
+/* For small phones (up to 320px wide) */
+/* Grundläggande responsiva inställningar för mobiler */
+/* För skärmar som är 414px breda eller mindre */
+/* Media queries för mobilskärmar (mindre än 600px) */
+/* Media queries för mindre mobiler (max 600px) */
+/* För alla mobilskärmar */
+/* Media queries för mindre skärmar */
+/* Media queries för mindre skärmar */
+@media only screen and (max-width: 768px) {
+  /* Justera shadow-boxen för mobiler */
+  .shadow-box {
+    max-width: 90%; /* Minskar bredden för mobiler */
+    left: 0; /* Centrera på mindre skärmar */
+    margin-left: auto; /* Centrera marginaler */
+    margin-right: auto;
+    margin: -700px;
+
+  }
+
+  /* Centrera och anpassa rubriker */
+  #boxen2 h1 {
+    font-size: 2rem; /* Anpassad rubrikstorlek för mobiler */
+    text-align: center;
+  }
+
+  #boxen2 h2 {
+    font-size: 1.5rem; /* Anpassad underrubrikstorlek */
+    text-align: center;
+  }
+
+  /* Justera bloben så att den syns ordentligt på mobiler */
+  .blob {
+    width: 200px;
+    height: 184px;
+    top: -492px; /* Anpassar placeringen för mobil */
+    margin: 0 auto;
+    right: 0;
+  }
+
+  /* Justerar profilbilden i blobben */
+  .blob img {
+    width: 85%; /* Mindre profilbild */
+    height: auto;
+    object-fit: cover;
+    top: 10%;
+    left: 10%;
+  }
+
+  /* Justerar layouten för mobil */
+  .container {
+    /* Extra padding för mobil */
+    text-align: center; /* Centrera innehållet */
+  }
+
+  /* Menyns teckenstorlek för mobil */
+  .navbar {
+    font-size: 14px; /* Mindre teckenstorlek */
+  }
+
+  /* Stapla boxarna under varandra */
+  .boxes {
+    flex-direction: column; /* Staplar boxarna */
+    align-items: center;
+  }
+
+  /* Justerar boxstorlek och placering för mobil */
+  #boxen {
+    width: 90%; /* Gör boxarna smalare för mobil */
+    margin-left: 0;
+  }
+
+  #boxen2 {
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  .about-container.visible .about-image-container {
+    width: 370px;
+  }
+}
+
+/* För iPhone SE specifikt */
+@media only screen and (max-width: 375px) {
+  /* Ytterligare anpassningar för mindre skärmar, som iPhone SE */
+  .shadow-box {
+    max-width: 95%; /* Ytterligare anpassning för små skärmar */
+  }
+
+  #boxen2 h1 {
+    font-size: 1.8rem; /* Mindre rubrikstorlek */
+  }
+
+  #boxen2 h2 {
+    font-size: 1.3rem; /* Mindre underrubrik */
+  }
+
+  .blob {
+    width: 180px; /* Mindre blob för iPhone SE */
+    height: 160px;
+    top: -450px; /* Justera placeringen för iPhone SE */
+  }
+
+  .blob img {
+    width: 80%; /* Justerar profilbildens storlek */
+  }
+}

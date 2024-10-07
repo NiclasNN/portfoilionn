@@ -112,8 +112,11 @@
 @media (max-width: 768px) {
   .icon-container {
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    /* gap: 10px; */
+    /* justify-content: center; */
+    margin-right: 925px;
+    height: auto;
+    width: 401px;
   }
 
   .icon {
@@ -133,4 +136,19 @@
   #animated-image {
     max-width: 60%; /* Minska storleken ytterligare på små skärmar */
   }
+  .frameworks-section {
+    transform: translateX(-31%);
+    width: 96%;
+}
+
+.frameworks-section h2 {
+  text-align: center;
+  /* margin: -154px auto; */
+  /* width: 4%; */
+  font-size: 1rem;
+  font-weight: 700;
+  color: #073763;
+  margin-bottom: 12px;
+  margin-left: -367px;
+}
 }

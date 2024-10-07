@@ -84,6 +84,14 @@
     text-align: center;
   }
 
+
+  .about-text p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #073763;
+    font-weight: 400;
+  }
+
   .animated-image {
     width: 80%;
   }

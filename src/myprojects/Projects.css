@@ -195,156 +195,127 @@
 
 @media (max-width: 768px) {
 
-
- #projects h2 {
-    margin-left: 0px;
-    margin-top: 274px;
-}
-
-
-  /* Adjust the #projects padding and margin for smaller screens */
-  #projects {
-    padding: 20px;
-    margin-top: 80px;
+  /* Centrera rubriken */
+  #projects h2 {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 20px;
   }
 
-  /* Adjust the grid layout to a single column for better readability */
+  /* Justera padding och marginal */
+  #projects {
+    padding: 10px;
+    margin-top: -600px;
+  }
+
+  /* Justera layouten för projektkorten */
   .project-grid {
     grid-template-columns: 1fr; /* Single column layout */
-    gap: 20px; /* Add some spacing between project cards */
-    max-width: 100%; /* Use full screen width */
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
-  /* Adjust the project card layout for smaller screens */
   .project-card {
-    flex-direction: column; /* Stack content vertically */
-    transform: scale(1); /* Keep original size on mobile */
-    transition: none; /* Remove transition effect */
+    flex-direction: column; /* Vertikal stapling av innehållet */
+    transform: scale(1); /* Behåll storleken på mobilen */
+    margin: 0 auto; /* Centrera projekten */
+    padding: 0px;
+    width: 100%; /* Full bredd för mobil */
   }
 
-  /* Remove hover effects on mobile */
-  .project-card:hover {
-    transform: none; /* Disable scaling on hover */
-    box-shadow: none; /* Disable box shadow change on hover */
-  }
-
-  /* Adjust the project image width, order, and alignment */
   .project-image {
-    width: 100%; /* Full width on mobile */
-    order: -1; /* Place image before text */
-    margin-bottom: 15px; /* Add margin to separate content from image */
+    width: 100%; /* Bilden tar full bredd */
+    order: -1; /* Flytta bilden över texten */
+    margin-bottom: 15px;
   }
 
-  /* Adjust text alignment and padding inside project content */
   .project-content {
     padding: 15px;
-    text-align: center; /* Center-align text on mobile */
+    text-align: center; /* Centrera texten */
   }
 
-  /* Adjust the font size of the project titles */
+  /* Justera textstorleken för titlar och paragrafer */
   .project-content h3 {
-    font-size: 1.5rem; /* Slightly smaller font size */
+    font-size: 1.7rem; /* Anpassad textstorlek för titlar */
   }
 
-  /* Adjust paragraph font size and line height */
   .project-content p {
-    margin-bottom: 10px;
-    font-size: 1rem; /* Reduce font size slightly */
+    font-size: 0.9rem;
     line-height: 1.5;
   }
 
-  /* Adjust the button layout and size on mobile */
+  /* Justera knappstorleken och layouten */
   .buttons {
-    flex-direction: column; /* Stack buttons vertically */
+    flex-direction: column; /* Vertikalt staplade knappar */
     align-items: center;
   }
 
   .button {
-    width: 80%; /* Increase button width */
-    margin-bottom: 10px; /* Add space between buttons */
-    font-size: 1rem; /* Adjust font size */
+    width: 80%; /* Öka knappens bredd */
+    margin-bottom: 10px;
+    font-size: 1rem;
   }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
 
+  /* Centrera rubriken */
+  #projects h2 {
+    margin-left: 0;
+    text-align: center;
+  }
 
-@media (min-width: 768px) and (max-width: 1024px){
+  /* Justera padding och marginal */
+  #projects {
+    padding: 0px;
+    margin-top: 80px;
+  }
 
+  /* Justera layouten för projektkorten */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 100%;
+  }
 
-#projects h2 {
-  margin-left: 0px;
-}
+  .project-card {
+    flex-direction: column;
+    transform: scale(1);
+    padding: 0px;
+    width: 100%;
+  }
 
+  .project-image {
+    width: 100%;
+    order: -1;
+    margin-bottom: 15px;
+  }
 
-/* Adjust the #projects padding and margin for smaller screens */
-#projects {
-  padding: 20px;
-  margin-top: 80px;
-}
+  .project-content {
+    padding: 15px;
+    text-align: center;
+  }
 
-/* Adjust the grid layout to a single column for better readability */
-.project-grid {
-  grid-template-columns: 1fr; /* Single column layout */
-  gap: 20px; /* Add some spacing between project cards */
-  max-width: 100%; /* Use full screen width */
-}
+  /* Justera textstorleken för titlar och paragrafer */
+  .project-content h3 {
+    font-size: 1.7rem;
+  }
 
-/* Adjust the project card layout for smaller screens */
-.project-card {
-  flex-direction: column; /* Stack content vertically */
-  transform: scale(1); /* Keep original size on mobile */
-  transition: none; /* Remove transition effect */
-}
+  .project-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
 
-/* Remove hover effects on mobile */
-.project-card:hover {
-  transform: none; /* Disable scaling on hover */
-  box-shadow: none; /* Disable box shadow change on hover */
-}
+  /* Justera knappstorleken och layouten */
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* Adjust the project image width, order, and alignment */
-.project-image {
-  width: 100%; /* Full width on mobile */
-  order: -1; /* Place image before text */
-  margin-bottom: 15px; /* Add margin to separate content from image */
-}
-
-/* Adjust text alignment and padding inside project content */
-.project-content {
-  padding: 15px;
-  text-align: center; /* Center-align text on mobile */
-}
-
-/* Adjust the font size of the project titles */
-.project-content h3 {
-  font-size: 1.5rem; /* Slightly smaller font size */
-}
-
-/* Adjust paragraph font size and line height */
-.project-content p {
-  margin-bottom: 10px;
-  font-size: 1rem; /* Reduce font size slightly */
-  line-height: 1.5;
-}
-
-/* Adjust the button layout and size on mobile */
-.buttons {
-  flex-direction: column; /* Stack buttons vertically */
-  align-items: center;
-}
-
-.button {
-  width: 80%; /* Increase button width */
-  margin-bottom: 10px; /* Add space between buttons */
-  font-size: 1rem; /* Adjust font size */
-}
-}
-
-
-.above-h2 {
-  height: 140px;
-    width: 36px;
-    /* position: fixed; */
-    
-  /* Exempelvis för att skapa lite utrymme ovanför h2 */
+  .button {
+    width: 80%;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
 }
