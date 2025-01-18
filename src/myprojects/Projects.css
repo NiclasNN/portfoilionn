@@ -199,14 +199,25 @@
   #projects h2 {
     margin-left: 0;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 92px;
   }
 
   /* Justera padding och marginal */
   #projects {
     padding: 10px;
-    margin-top: -600px;
+    margin-top: -801px;
+    margin-bottom: 690px;
   }
+
+
+  
+  
+  .footer-bottom{
+margin-bottom:  15px;
+
+
+  }
+  
 
   /* Justera layouten för projektkorten */
   .project-grid {
@@ -258,37 +269,38 @@
   }
 }
 
+/* För surfplattor (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
-
   /* Centrera rubriken */
   #projects h2 {
     margin-left: 0;
     text-align: center;
   }
 
-  /* Justera padding och marginal */
+  /* Justera padding och marginal för projektdelen */
   #projects {
-    padding: 0px;
-    margin-top: 80px;
+    padding: 10px;
+    margin-top: 60px; /* Mindre toppmarginal */
   }
 
   /* Justera layouten för projektkorten */
   .project-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 100%;
+    grid-template-columns: 1fr 1fr; /* Två kolumner istället för en */
+    gap: 20px; /* Avstånd mellan kolumner */
+    max-width: 95%; /* Anpassad maxbredd för mindre skärmar */
+    margin: 0 auto;
   }
 
   .project-card {
-    flex-direction: column;
-    transform: scale(1);
-    padding: 0px;
-    width: 100%;
+    flex-direction: column; /* Stapla bild och text vertikalt */
+    transform: scale(0.9); /* Minska storleken lite */
+    width: 100%; /* Full bredd för varje kort */
+    margin: 10px auto; /* Lägger till lite mellanrum mellan korten */
   }
 
   .project-image {
-    width: 100%;
-    order: -1;
+    width: 100%; /* Gör bilden full bredd för varje kort */
+    order: -1; /* Flytta bilden över texten */
     margin-bottom: 15px;
   }
 

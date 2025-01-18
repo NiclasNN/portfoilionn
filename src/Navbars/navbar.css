@@ -86,7 +86,7 @@
   display: none;
 }
 
-@media (max-width: 1100px) { /* Tidigare aktivering av media query */
+@media (max-width: 1000px) { /* Tidigare aktivering av media query */
   .navbar-links {
     display: none;
     flex-direction: column;
@@ -139,7 +139,7 @@
 }
 
 /* Media Query for iPad Devices (min-width: 768px and max-width: 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1000px) {
   .navbar-links {
     display: none;
     flex-direction: column;
@@ -191,7 +191,7 @@
   }
 }
 
-@media (max-width: 1223px) {
+@media (max-width: 1161px) {
   .navbar-links {
     display: none;
     flex-direction: column;

@@ -6,13 +6,14 @@
   align-items: center;
   margin: 0px auto; /* Minskad marginal för att minska avståndet */
   max-width: 1200px;
-  margin-left: 150px;
+  margin-left: 100px;
   padding: 0;
   background: none; 
   border-radius: 0;
   box-shadow: none;
   color: #073763;
   margin-top: 62px;
+  margin-bottom:123px;
 }
 
 .frameworks-section h2 {
@@ -27,7 +28,7 @@
 
 .frameworks-section {
   transform: translateX(-31%); /* Flyttar sektionen till vänster */
-  width: 100%; /* Ser till att hela sektionen tar upp full bredd */
+  width: 70% /* Ser till att hela sektionen tar upp full bredd */
 }
 
 /* Flytta teknologierna överst */
@@ -112,9 +113,9 @@
 @media (max-width: 768px) {
   .icon-container {
     flex-wrap: wrap;
-    /* gap: 10px; */
+ /* gap: 10px; */
     /* justify-content: center; */
-    margin-right: 925px;
+    margin-left: -99px;
     height: auto;
     width: 401px;
   }
@@ -145,10 +146,23 @@
   text-align: center;
   /* margin: -154px auto; */
   /* width: 4%; */
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #073763;
   margin-bottom: 12px;
-  margin-left: -367px;
+  margin-left: -93px;
 }
+
+.text-column{
+
+  visibility: hidden;
+
+}
+
+.image-column{
+
+  visibility: hidden;
+
+}
+
 }

@@ -30,12 +30,10 @@
   border-radius: 48% 52% 68% 32% / 42% 28% 72% 58%;
   background: #073763;
   background-size: 500% 100%;
-  animation: 
-      blobber 12s linear infinite, /* Byt till linear för att få en jämn rörelse */
-      cobler 12s linear infinite alternate;
+  animation: blobber 12s linear infinite, cobler 12s linear infinite alternate;
   margin-left: -441px;
   margin-top: 31%;
-  scale: 1.2;
+  transform: scale(1.2);
 }
 
 .blob img {
@@ -59,23 +57,20 @@
   background-size: cover;
   background-position: center;
   border-radius: 50%;
-  animation:
-      blobber 1s linear infinite, /* Byt till linear här också */
-      wobbler 1s linear infinite alternate;
+  animation: blobber 1s linear infinite, wobbler 1s linear infinite alternate;
 }
 
 @keyframes blobber {
-  0%  { border-radius: 30% 70% 60% 40% / 30% 50% 50% 70%; }  /* Drastiskt annorlunda form */
-  10% { border-radius: 70% 30% 25% 75% / 50% 20% 80% 50%; }  /* Smalare och bredare */
-  20% { border-radius: 50% 50% 40% 60% / 40% 30% 70% 60%; }  /* Oval form */
-  30% { border-radius: 50% 60% 40% 80% / 60% 50% 50% 40%; }  /* Djupare böjningar */
-  40% { border-radius: 30% 70% 60% 40% / 30% 50% 50% 70%; }  /* Vänd om formen */  /* Tillbaka till ursprung */
-  60% { border-radius: 80% 20% 70% 30% / 50% 25% 75% 50%; }  /* Extrem stretchning */  /* Balans mellan ovaler */
-  80% { border-radius: 20% 80% 60% 40% / 70% 30% 50% 50%; }  /* Djup stretchning */
-  90% { border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }  /* Formvariation */
-  100%{ border-radius: 30% 70% 60% 40% / 30% 50% 50% 70%; }  /* Återgång till ursprung */
+  0%  { border-radius: 30% 70% 60% 40% / 30% 50% 50% 70%; }
+  10% { border-radius: 70% 30% 25% 75% / 50% 20% 80% 50%; }
+  20% { border-radius: 50% 50% 40% 60% / 40% 30% 70% 60%; }
+  30% { border-radius: 50% 60% 40% 80% / 60% 50% 50% 40%; }
+  40% { border-radius: 30% 70% 60% 40% / 30% 50% 50% 70%; }
+  60% { border-radius: 80% 20% 70% 30% / 50% 25% 75% 50%; }
+  80% { border-radius: 20% 80% 60% 40% / 70% 30% 50% 50%; }
+  90% { border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
+  100% { border-radius: 30% 70% 60% 40% / 30% 50% 50% 70%; }
 }
-
 
 @keyframes cobler {
   0% { background-position: 0% 0%; }
@@ -86,10 +81,6 @@
   0%  { transform: rotateZ(19deg); }
   100% { transform: rotateZ(-8deg); }
 }
-
-
-
-
 
 /* Slide-in class */
 .slide-in {
@@ -104,7 +95,6 @@
   margin-top: 130px;
 }
 
-/* Första boxen */
 #boxen {
   height: 457px;
   width: 363px;
@@ -116,7 +106,6 @@
   margin-left: 800px;
 }
 
-/* Andra boxen */
 #boxen2 {
   height: 600px;
   width: 600px;
@@ -127,7 +116,6 @@
   flex-direction: column;
 }
 
-/* Stora rubriker */
 #boxen2 h1 {
   font-size: 4.5rem;
   font-family: 'Roboto', sans-serif;
@@ -137,7 +125,6 @@
   margin: 20px;
 }
 
-/* Små rubriker */
 #boxen2 h2 {
   font-size: 2.5rem;
   font-family: 'Roboto', sans-serif;
@@ -146,10 +133,9 @@
   margin: 1px;
 }
 
-/* Kontaktknappen */
 #contactme {
-  text-decoration: none; /* Ta bort understrykningen */
-  color: #ffffff; /* Ändra textfärgen till vit */
+  text-decoration: none;
+  color: #ffffff;
   padding: 10.56px 10.12px;
   background: #4a90e2;
   border-radius: 30px;
@@ -165,8 +151,8 @@
 }
 
 #contactme a {
-  text-decoration: none !important; /* Försäkra dig om att understrykningen tas bort från alla länkar */
-  color: inherit; /* Se till att länken ärver färgen från knappen */
+  text-decoration: none !important;
+  color: inherit;
 }
 
 #contactme::before {
@@ -196,87 +182,52 @@
   cursor: pointer;
 }
 
-
-
-/* Gradient move keyframes */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Media queries för mindre skärmar */
-
-
-
-/* For small phones (up to 320px wide) */
-/* Grundläggande responsiva inställningar för mobiler */
-/* För skärmar som är 414px breda eller mindre */
-/* Media queries för mobilskärmar (mindre än 600px) */
-/* Media queries för mindre mobiler (max 600px) */
-/* För alla mobilskärmar */
-/* Media queries för mindre skärmar */
-/* Media queries för mindre skärmar */
+/* Responsiv design för mindre skärmar */
 @media only screen and (max-width: 768px) {
-  /* Justera shadow-boxen för mobiler */
   .shadow-box {
-    max-width: 90%; /* Minskar bredden för mobiler */
-    left: 0; /* Centrera på mindre skärmar */
-    margin-left: auto; /* Centrera marginaler */
-    margin-right: auto;
-    margin: -700px;
-
+    max-width: 90%;
+    left: 0;
+    
   }
 
-  /* Centrera och anpassa rubriker */
-  #boxen2 h1 {
-    font-size: 2rem; /* Anpassad rubrikstorlek för mobiler */
+  #boxen2 h1, #boxen2 h2 {
+    font-size: 1.5rem;
     text-align: center;
   }
 
-  #boxen2 h2 {
-    font-size: 1.5rem; /* Anpassad underrubrikstorlek */
-    text-align: center;
-  }
-
-  /* Justera bloben så att den syns ordentligt på mobiler */
   .blob {
     width: 200px;
     height: 184px;
-    top: -492px; /* Anpassar placeringen för mobil */
+    top: -492px;
     margin: 0 auto;
     right: 0;
   }
 
-  /* Justerar profilbilden i blobben */
   .blob img {
-    width: 85%; /* Mindre profilbild */
+    width: 85%;
     height: auto;
     object-fit: cover;
     top: 10%;
     left: 10%;
   }
 
-  /* Justerar layouten för mobil */
   .container {
-    /* Extra padding för mobil */
-    text-align: center; /* Centrera innehållet */
+    text-align: center;
   }
 
-  /* Menyns teckenstorlek för mobil */
-  .navbar {
-    font-size: 14px; /* Mindre teckenstorlek */
-  }
-
-  /* Stapla boxarna under varandra */
   .boxes {
-    flex-direction: column; /* Staplar boxarna */
+    flex-direction: column;
     align-items: center;
   }
 
-  /* Justerar boxstorlek och placering för mobil */
   #boxen {
-    width: 90%; /* Gör boxarna smalare för mobil */
+    width: 90%;
     margin-left: 0;
   }
 
@@ -286,33 +237,74 @@
     top: 0;
   }
 
-  .about-container.visible .about-image-container {
-    width: 370px;
+  .footer-bottom {
+    margin-bottom: 61px;
   }
 }
 
 /* För iPhone SE specifikt */
 @media only screen and (max-width: 375px) {
-  /* Ytterligare anpassningar för mindre skärmar, som iPhone SE */
   .shadow-box {
-    max-width: 95%; /* Ytterligare anpassning för små skärmar */
+    max-width: 95%;
   }
 
   #boxen2 h1 {
-    font-size: 1.8rem; /* Mindre rubrikstorlek */
+    font-size: 1.8rem;
   }
 
   #boxen2 h2 {
-    font-size: 1.3rem; /* Mindre underrubrik */
+    font-size: 1.3rem;
   }
 
   .blob {
-    width: 180px; /* Mindre blob för iPhone SE */
+    width: 180px;
     height: 160px;
-    top: -450px; /* Justera placeringen för iPhone SE */
+    top: -450px;
   }
 
   .blob img {
-    width: 80%; /* Justerar profilbildens storlek */
+    width: 80%;
   }
 }
+
+/* Justeringar för surfplattor */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    text-align: center;
+  }
+
+  .shadow-box {
+    max-width: 90%;
+    left: auto;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .blob {
+    width: 260px;
+    height: 240px;
+    top: -40px;
+  }
+
+/* För iPhone SE specifikt */
+@media only screen and (max-width: 375px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .about-container img {
+    width: 90%; /* Gör bilden mindre för att passa inom skärmen */
+    height: auto;
+    object-fit: cover;
+    margin-top: 10px;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+    line-height: 1.5;
+  }

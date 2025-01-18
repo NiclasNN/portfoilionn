@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   max-width: 1000px;
-  margin: 0 auto;
+
   padding: 3rem;
   background-size: cover;
   background-position: center;
@@ -75,7 +75,7 @@
 .animated-image {
   width: 450px;
   height: auto;
-  margin-right: 130px;
+  margin-right: 9px;
 }
 
 @media (max-width: 768px) {
@@ -93,6 +93,6 @@
   }
 
   .animated-image {
-    width: 80%;
+    width: 100%;
   }
 }

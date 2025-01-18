@@ -48,32 +48,38 @@ function Footer({ language }) {
     }, []);
 
     return (
-        <footer className="footer-container">
-            <div className="footer-content">
-                <div className="footer-section">
-                    <h3>{text.developerName}</h3>
-                    <p>{text.description}</p>
-                </div>
-                <div className="footer-section">
-                    <h3>{text.navigate}</h3>
-                    <ul>
-                        <li><a href="#home">{text.home}</a></li>
-                        <li><a href="#about">{text.about}</a></li>
-                        <li><a href="#projects">{text.projects}</a></li>
-                        <li><a href={`/CV.pdf`} download>{text.cv}</a></li>
-                    </ul>
-                </div>
-                <div className="footer-section">
-                    <h3>{text.contact}</h3>
-                    <p><a href="mailto:niclasnorman1@hotmail.se">niclasnorman1@hotmail.se</a></p>
-                    <p><a href="tel:+46707752120">+46 70 7752120</a></p>
-                    <p>{text.city}</p>
-                </div>
+        <>
+            <div className="main-content">
+                {/* Din huvudsektion här */}
             </div>
-            <div className="footer-bottom">
-                <p>{text.copyright}</p>
-            </div>
-        </footer>
+
+            <footer className="footer-container">
+                <div className="footer-content">
+                    <div className="footer-section">
+                        <h3>{text.developerName}</h3>
+                        <p>{text.description}</p>
+                    </div>
+                    <div className="footer-section">
+                        <h3>{text.navigate}</h3>
+                        <ul>
+                            <li><a href="#home">{text.home}</a></li>
+                            <li><a href="#about">{text.about}</a></li>
+                            <li><a href="#projects">{text.projects}</a></li>
+                            <li><a href={`/CV.pdf`} download>{text.cv}</a></li>
+                        </ul>
+                    </div>
+                    <div className="footer-section">
+                        <h3>{text.contact}</h3>
+                        <p><a href="mailto:niclasnorman1@hotmail.se">niclasnorman1@hotmail.se</a></p>
+                        <p><a href="tel:+46707752120">+46 70 7752120</a></p>
+                        <p>{text.city}</p>
+                    </div>
+                </div>
+                <div className="footer-bottom">
+                    <p>{text.copyright}</p>
+                </div>
+            </footer>
+        </>
     );
 }
 
